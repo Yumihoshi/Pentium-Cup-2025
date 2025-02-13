@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="Pentium-Cup-2025"
+config/version="v1.0.0"
 config/tags=PackedStringArray("奔腾杯")
+run/main_scene="res://Scenes/GameScene/GameScene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://Art/icon.svg"
+config/icon="res://Assets/Images/Icon/DefaultIcon.png"
 
 [dotnet]
 
@@ -22,11 +24,9 @@ project/assembly_name="Pentium-Cup-2025"
 [file_customization]
 
 folder_colors={
-"res://Art/": "purple",
-"res://Audios/": "yellow",
-"res://Prefabs/": "blue",
-"res://Scenes/": "teal",
-"res://Scripts/": "pink"
+"res://Assets/": "orange",
+"res://Scenes/": "pink",
+"res://Scripts/": "purple"
 }
 
 [rendering]
