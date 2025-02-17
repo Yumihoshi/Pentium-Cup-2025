@@ -1,7 +1,15 @@
+// *****************************************************************************
+// @author: 绘星tsuki
+// @email: xiaoyuesun915@gmail.com
+// @creationDate: 2025/02/13 15:02
+// @version: 1.0
+// @description:
+// *****************************************************************************
+
 using System;
 using Godot;
 
-namespace LumiVerseFramework;
+namespace LumiVerseFramework.Common;
 
 public static class YumihoshiDebug
 {
@@ -13,7 +21,8 @@ public static class YumihoshiDebug
     /// <typeparam name="T">当前调用的脚本类名</typeparam>
     public static void Print<T>(string funcType, string message)
     {
-        GD.Print($"[{funcType}] {typeof(T).Name} {GetNowTime()}\n>>> {message}");
+        GD.Print(
+            $"[{funcType}] {typeof(T).Name} {GetNowTime()}\n>>> {message}");
     }
 
     /// <summary>
@@ -26,7 +35,7 @@ public static class YumihoshiDebug
     {
         GD.PushWarning($"[{funcType}] {typeof(T).Name}\n>>> {message}");
     }
-    
+
     /// <summary>
     /// 将Error级别的日志推送到栈，便于调试（不会输出到控制台）
     /// </summary>

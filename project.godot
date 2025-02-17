@@ -26,7 +26,7 @@ project/assembly_name="Pentium-Cup-2025"
 folder_colors={
 "res://Assets/": "orange",
 "res://Scenes/": "pink",
-"res://Scripts/": "purple"
+"res://Scripts/": "blue"
 }
 
 [rendering]
