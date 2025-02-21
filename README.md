@@ -11,9 +11,9 @@
 | 职位      | 人员 |
 | ----------- | ----------- |
 | 程序      | 绘星tsuki       |
-| 策划   | SKewer，蒟蒻        |
+| 策划   | [Osaki Akari](https://github.com/AkariOSAKI)，蒟蒻        |
 | 美术，音乐 | 猫猫是狸，慢慢 |
-| 脚本 | SKewer |
+| 脚本 | [Osaki Akari](https://github.com/AkariOSAKI) |
 
 > [!NOTE]
 > 本项目遵循 **MIT License**
