@@ -38,6 +38,7 @@ zoom = Vector2(5, 5)
 tween_resource = SubResource("Resource_bcbbm")
 follow_offset = Vector2(0, -76.085)
 follow_axis_lock = 1
+draw_limits = true
 
 [node name="UI" parent="." instance=ExtResource("3_ygj6j")]
 layer = -99
