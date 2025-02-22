@@ -21,6 +21,7 @@ position = Vector2(0, 83)
 physics_interpolation_mode = 1
 position = Vector2(0, 6.915)
 zoom = Vector2(5, 5)
+process_callback = 0
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300
@@ -40,3 +41,4 @@ follow_axis_lock = 1
 
 [node name="UI" parent="." instance=ExtResource("3_ygj6j")]
 layer = -99
+visible = false

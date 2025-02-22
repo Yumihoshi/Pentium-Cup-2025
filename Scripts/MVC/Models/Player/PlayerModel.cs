@@ -30,4 +30,6 @@ public partial class PlayerModel : Resource
     /// </summary>
     [Export]
     public float SpeedUpAddValue { get; set; }
+
+    [ExportGroup("子弹")] [Export] public PackedScene Firework { get; set; }
 }
