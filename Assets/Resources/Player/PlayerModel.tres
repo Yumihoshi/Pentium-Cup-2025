@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ckkgdqre657e8"]
+
+[ext_resource type="Script" path="res://Scripts/MVC/Models/Player/PlayerModel.cs" id="1_v38ty"]
+
+[resource]
+script = ExtResource("1_v38ty")
+Speed = 3000.0
+RotateSpeed = 1.0
+SpeedUpAddValue = 1500.0

@@ -1,29 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdf6v5m6iri0g"]
+[gd_scene load_steps=3 format=3 uid="uid://bdf6v5m6iri0g"]
 
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="1_cck8x"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="2_v52im"]
+[ext_resource type="Script" path="res://Scripts/MVC/Views/Player/PlayerView.cs" id="2_wlyai"]
+[ext_resource type="Script" path="res://Scripts/MVC/Controllers/Player/PlayerController.cs" id="3_de56j"]
 
-[sub_resource type="Resource" id="Resource_42m5d"]
-script = ExtResource("2_v52im")
-duration = 1.0
-transition = 0
-ease = 2
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_qtr8c"]
-radius = 1.0
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_lgt7p"]
-
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 0
+motion_mode = 1
 
-[node name="PhantomCamera2D" type="Node2D" parent="."]
-script = ExtResource("1_cck8x")
-tween_resource = SubResource("Resource_42m5d")
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.678431, 0.45098, 0.913725, 1)
+polygon = PackedVector2Array(0, 0, 5, 0, 0, -13, -5, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_qtr8c")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 5, 0, 0, -13, -5, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
-texture = SubResource("CanvasTexture_lgt7p")
+[node name="MVC" type="Node" parent="."]
+
+[node name="View" type="Node" parent="MVC"]
+script = ExtResource("2_wlyai")
+
+[node name="Controller" type="Node" parent="MVC" node_paths=PackedStringArray("_player")]
+script = ExtResource("3_de56j")
+_player = NodePath("../..")
