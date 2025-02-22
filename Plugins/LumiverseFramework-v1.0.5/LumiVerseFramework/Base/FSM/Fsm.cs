@@ -9,7 +9,6 @@
 using System;
 using System.Collections.Generic;
 using LumiVerseFramework.Base.FSM.Interfaces;
-using LumiVerseFramework.Base.FSM.Types;
 using LumiVerseFramework.Common;
 
 namespace LumiVerseFramework.Base.FSM;
