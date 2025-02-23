@@ -8,4 +8,5 @@ script = ExtResource("1_v38ty")
 Speed = 3000.0
 RotateSpeed = 1.0
 SpeedUpAddValue = 1500.0
+MaxHealth = 100
 Firework = ExtResource("1_jvy6g")
