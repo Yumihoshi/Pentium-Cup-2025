@@ -32,13 +32,19 @@ public partial class PlayerModel : Resource
     [Export]
     public float SpeedUpAddValue { get; set; } = 1500;
 
-    [ExportGroup("玩家血量")]
-    [Export]
-    public int MaxHealth { get; private set; } = 100;
+    [ExportGroup("玩家血量")] [Export] public int MaxHealth { get; set; } = 100;
 
     public int CurrentHealth { get; set; }
 
-    [ExportGroup("子弹")] [Export] public PackedScene Firework { get; set; }
+    [ExportGroup("攻击")]
+    [Export]
+    public PackedScene Firework { get; private set; }
+
+    /// <summary>
+    /// 攻击间隔
+    /// </summary>
+    [Export]
+    public float AttackInterval { get; set; } = 0.3f;
 
     /// <summary>
     /// 初始化

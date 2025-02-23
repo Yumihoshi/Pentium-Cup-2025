@@ -37,6 +37,6 @@ public partial class PlayerController : Node
         _playerMove.HandleRotate(delta);
         _playerMove.HandleSpeedUp();
         // 攻击
-        _playerAttack.HandleFire();
+        _playerAttack.HandleFire(delta);
     }
 }

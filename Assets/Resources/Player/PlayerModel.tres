@@ -10,3 +10,4 @@ RotateSpeed = 1.0
 SpeedUpAddValue = 1500.0
 MaxHealth = 100
 Firework = ExtResource("1_jvy6g")
+AttackInterval = 0.3
