@@ -16,12 +16,12 @@ public class PlayerMove
 {
     private Vector2 _inputDirection = Vector2.Zero;
     private readonly CharacterBody2D _player;
-    
+
     public PlayerMove(CharacterBody2D player)
     {
         _player = player;
     }
-    
+
     /// <summary>
     /// 处理输入
     /// </summary>
@@ -31,13 +31,7 @@ public class PlayerMove
         if (Input.IsActionJustPressed("SwitchFullscreen"))
             YumihoshiFullScreen.SwitchFullScreenAuto();
         // 转向
-        if (Input.IsActionJustPressed("RotateLeft")) _inputDirection.X = -1;
-        else if (Input.IsActionJustReleased("RotateLeft"))
-            _inputDirection.X = 0;
-        else if (Input.IsActionJustPressed("RotateRight"))
-            _inputDirection.X = 1;
-        else if (Input.IsActionJustReleased("RotateRight"))
-            _inputDirection.X = 0;
+        _inputDirection.X = Input.GetAxis("RotateLeft", "RotateRight");
     }
 
     /// <summary>
