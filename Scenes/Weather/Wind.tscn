@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs1snuilfh5su"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Wind.cs" id="1_vai6w"]
+
+[node name="Wind" type="Node" groups=["Winds"]]
+script = ExtResource("1_vai6w")

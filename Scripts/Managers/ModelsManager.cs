@@ -9,12 +9,14 @@
 using Godot;
 using LumiVerseFramework.Base;
 using PentiumCup2025.Scripts.MVC.Models.Player;
+using PentiumCup2025.Scripts.MVC.Models.Weather;
 
 namespace PentiumCup2025.Scripts.Managers;
 
 public partial class ModelsManager : Singleton<ModelsManager>
 {
     public PlayerModel PlayerModelData { get; private set; }
+    public WindModel WindModelData { get; private set; }
 
     public override void _Ready()
     {
@@ -22,5 +24,8 @@ public partial class ModelsManager : Singleton<ModelsManager>
         PlayerModelData =
             GD.Load<PlayerModel>(
                 "res://Assets/Resources/Player/PlayerModel.tres");
+        WindModelData =
+            GD.Load<WindModel>(
+                "res://Assets/Resources/Weather/WindModel.tres");
     }
 }

@@ -22,6 +22,7 @@ config/icon="res://Assets/Images/Icon/DefaultIcon.png"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 ModelsManager="*res://Scripts/Managers/ModelsManager.cs"
+WeatherManager="*res://Scripts/Managers/WeatherManager.cs"
 GameManager="*res://Scripts/Managers/GameManager.cs"
 
 [dialogic]
