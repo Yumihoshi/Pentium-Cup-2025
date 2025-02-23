@@ -9,6 +9,7 @@
 using System;
 using Godot;
 using LumiVerseFramework.Common;
+using PentiumCup2025.Scripts.Managers;
 using PentiumCup2025.Scripts.MVC.Models.Weather;
 
 namespace PentiumCup2025.Scripts.Entities;
@@ -41,6 +42,9 @@ public partial class Wind : Node
     {
         base._Process(delta);
         if (!_isEnabled) return;
+        // 风生效
+        UIManager.Instance.UpdateWindLabel(_direction, _power,
+            (float)_timer.TimeLeft);
         switch (_direction)
         {
             case WindDirection.Left:

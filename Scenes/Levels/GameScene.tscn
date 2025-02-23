@@ -42,4 +42,3 @@ draw_limits = true
 
 [node name="UI" parent="." instance=ExtResource("3_ygj6j")]
 layer = -99
-visible = false

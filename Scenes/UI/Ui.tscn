@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cj776wocy2khu"]
+[gd_scene load_steps=2 format=3 uid="uid://cj776wocy2khu"]
+
+[ext_resource type="FontFile" uid="uid://c6noukwmi2npu" path="res://Assets/Fonts/常用/微软雅黑.TTC" id="1_6cx1o"]
 
 [node name="UI" type="CanvasLayer"]
 layer = 99
@@ -10,3 +12,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="WindLabel" type="Label" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_6cx1o")
+theme_override_font_sizes/font_size = 41
+text = "当前
+风向：
+风力：
+持续时间："
+horizontal_alignment = 1
+vertical_alignment = 1
