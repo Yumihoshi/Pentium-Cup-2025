@@ -14,8 +14,8 @@ namespace PentiumCup2025.Scripts.Entities;
 
 public partial class Firework : Area2D
 {
-    [ExportGroup("属性")] [Export] private float _lifeTime;
-    [Export] private float _speed;
+    [ExportGroup("属性")] [Export] private float _lifeTime = 5f;
+    [Export] private float _speed = 200f;
 
     private float _timer;
 

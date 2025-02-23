@@ -48,10 +48,14 @@ public partial class Wind : Node
         switch (_direction)
         {
             case WindDirection.Left:
-                _player.Rotation -= _power * (float)delta;
+                _player.Rotation = Mathf.Clamp(
+                    _player.Rotation - _power * (float)delta,
+                    Mathf.DegToRad(-75), Mathf.DegToRad(75));
                 break;
             case WindDirection.Right:
-                _player.Rotation += _power * (float)delta;
+                _player.Rotation = Mathf.Clamp(
+                    _player.Rotation + _power * (float)delta,
+                    Mathf.DegToRad(-75), Mathf.DegToRad(75));
                 break;
             default:
                 YumihoshiDebug.Error<Wind>("机制-风",

@@ -41,13 +41,17 @@ public class PlayerMove
     public void HandleRotate(double delta)
     {
         if (_inputDirection.X > 0)
-            _player.Rotation +=
-                ModelsManager.Instance.PlayerModelData.RotateSpeed *
-                (float)delta;
+            _player.Rotation =
+                Mathf.Clamp(
+                    _player.Rotation +
+                    ModelsManager.Instance.PlayerModelData.RotateSpeed *
+                    (float)delta, Mathf.DegToRad(-75), Mathf.DegToRad(75));
         else if (_inputDirection.X < 0)
-            _player.Rotation -=
-                ModelsManager.Instance.PlayerModelData.RotateSpeed *
-                (float)delta;
+            _player.Rotation =
+                Mathf.Clamp(
+                    _player.Rotation -
+                    ModelsManager.Instance.PlayerModelData.RotateSpeed *
+                    (float)delta, Mathf.DegToRad(-75), Mathf.DegToRad(75));
 
         Vector2 direction = new Vector2(0, -1).Rotated(_player.Rotation);
         _player.Velocity = direction *
