@@ -7,8 +7,6 @@
 // *****************************************************************************
 
 using LumiVerseFramework.Base;
-using PentiumCup2025.Scripts.Commons;
-using PentiumCup2025.Scripts.Entities;
 using PentiumCup2025.Scripts.MVC.Controllers.Weather;
 using PentiumCup2025.Scripts.MVC.Models.Weather;
 
@@ -24,7 +22,8 @@ public partial class WeatherManager : Singleton<WeatherManager>
         _weatherFactory = new WeatherFactory();
         while (true)
         {
-            _weatherFactory.GenerateWeather(WeatherType.Wind).Generate(GetNode("/root/GameScene"));
+            _weatherFactory.GenerateWeather(WeatherType.Wind)
+                .Generate(GetNode("/root/GameScene"));
             await ToSignal(
                 GetTree()
                     .CreateTimer(

@@ -14,12 +14,15 @@ namespace PentiumCup2025.Scripts.MVC.Controllers.Player;
 
 public class PlayerAttack
 {
+    private readonly Node2D _firePoint;
     private readonly PackedScene _firework;
     private readonly CharacterBody2D _player;
-    private readonly Node2D _firePoint;
-    private float _attackCdTimer = ModelsManager.Instance.PlayerModelData.AttackInterval;
 
-    public PlayerAttack(PackedScene firework, CharacterBody2D player, Node2D firePoint)
+    private float _attackCdTimer =
+        ModelsManager.Instance.PlayerModelData.AttackInterval;
+
+    public PlayerAttack(PackedScene firework, CharacterBody2D player,
+        Node2D firePoint)
     {
         _firework = firework;
         _player = player;
@@ -44,6 +47,7 @@ public class PlayerAttack
             YumihoshiDebug.Error<PlayerAttack>("玩家开火失败", "Firework 实例化失败");
             return;
         }
+
         firework.GlobalPosition = _firePoint.GlobalPosition;
         firework.Rotation = _player.Rotation;
         _player.GetParent().AddChild(firework);

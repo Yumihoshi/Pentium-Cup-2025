@@ -6,13 +6,18 @@
 // @description:
 // *****************************************************************************
 
-using System.ComponentModel;
 using Godot;
 
 namespace PentiumCup2025.Scripts.MVC.Models.Player;
 
 public partial class PlayerModel : Resource
 {
+    [ExportGroup("玩家旋转限制（角度制）")]
+    [Export]
+    public float MinRotationDeg { get; set; } = -75;
+
+    [Export] public float MaxRotationDeg { get; set; } = 75;
+
     /// <summary>
     /// 移动速度
     /// </summary>

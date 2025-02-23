@@ -7,6 +7,6 @@
         <RootNamespace>PentiumCup2025</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
-      <Folder Include="Scripts\MVC\Views\Weather\" />
+        <Folder Include="Scripts\MVC\Views\Weather\"/>
     </ItemGroup>
 </Project>

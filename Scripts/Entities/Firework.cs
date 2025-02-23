@@ -8,7 +8,6 @@
 
 using Godot;
 using LumiVerseFramework.Common;
-using PentiumCup2025.Scripts.Managers;
 
 namespace PentiumCup2025.Scripts.Entities;
 

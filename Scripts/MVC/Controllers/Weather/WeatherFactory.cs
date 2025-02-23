@@ -17,8 +17,8 @@ namespace PentiumCup2025.Scripts.MVC.Controllers.Weather;
 
 public class WeatherFactory
 {
-    private Random random = new();
-    
+    private readonly Random random = new();
+
     /// <summary>
     /// 创建天气
     /// </summary>
@@ -46,14 +46,15 @@ public class WeatherFactory
                 return null;
         }
     }
-    
+
     /// <summary>
     /// 随机生成一个风生成间隔
     /// </summary>
     /// <returns></returns>
     public float GetRandomWindGenerateInterval()
     {
-        return Common.GetRandomFloat(ModelsManager.Instance.WindModelData.MinInterval,
+        return Common.GetRandomFloat(
+            ModelsManager.Instance.WindModelData.MinInterval,
             ModelsManager.Instance.WindModelData.MaxInterval);
     }
 

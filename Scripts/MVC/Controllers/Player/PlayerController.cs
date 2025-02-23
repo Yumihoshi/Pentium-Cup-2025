@@ -7,23 +7,22 @@
 // *****************************************************************************
 
 using Godot;
-using LumiVerseFramework.Common;
 using PentiumCup2025.Scripts.Managers;
 
 namespace PentiumCup2025.Scripts.MVC.Controllers.Player;
 
 public partial class PlayerController : Node
 {
-    [ExportGroup("节点依赖")] [Export] private CharacterBody2D _player;
     [Export] private Node2D _firePoint;
-
-    private PlayerMove _playerMove;
+    [ExportGroup("节点依赖")] [Export] private CharacterBody2D _player;
     private PlayerAttack _playerAttack;
+
+    public PlayerMove PlayerMoveHandler { get; private set; }
 
     public override void _Ready()
     {
         base._Ready();
-        _playerMove = new PlayerMove(_player);
+        PlayerMoveHandler = new PlayerMove(_player);
         _playerAttack =
             new PlayerAttack(ModelsManager.Instance.PlayerModelData.Firework,
                 _player, _firePoint);
@@ -33,9 +32,9 @@ public partial class PlayerController : Node
     {
         base._Process(delta);
         // 移动
-        _playerMove.HandleInput();
-        _playerMove.HandleRotate(delta);
-        _playerMove.HandleSpeedUp();
+        PlayerMoveHandler.HandleInput();
+        PlayerMoveHandler.HandleRotate(delta);
+        PlayerMoveHandler.HandleSpeedUp();
         // 攻击
         _playerAttack.HandleFire(delta);
     }

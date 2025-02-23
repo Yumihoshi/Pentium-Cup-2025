@@ -7,7 +7,6 @@
 // *****************************************************************************
 
 using Godot;
-using PentiumCup2025.Scripts.Interfaces;
 
 namespace PentiumCup2025.Scripts.MVC.Models.Weather;
 

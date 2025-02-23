@@ -6,10 +6,10 @@
 // @description:
 // *****************************************************************************
 
-using System;
 using Godot;
 using LumiVerseFramework.Common;
 using PentiumCup2025.Scripts.Managers;
+using PentiumCup2025.Scripts.MVC.Controllers.Player;
 using PentiumCup2025.Scripts.MVC.Models.Weather;
 
 namespace PentiumCup2025.Scripts.Entities;
@@ -17,16 +17,18 @@ namespace PentiumCup2025.Scripts.Entities;
 public partial class Wind : Node
 {
     private WindDirection _direction;
-    private float _power;
     private float _duration;
-    private SceneTreeTimer _timer;
-    private CharacterBody2D _player;
     private bool _isEnabled;
+    private CharacterBody2D _player;
+    private PlayerController _playerController;
+    private float _power;
+    private SceneTreeTimer _timer;
 
     public override void _Ready()
     {
         base._Ready();
-        _player = GetNode<CharacterBody2D>("/root/GameScene/Player");
+        _player = GetTree().GetNodesInGroup("Player")[0] as CharacterBody2D;
+        _playerController = _player.GetNode<PlayerController>("MVC/Controller");
         // 销毁其他风
         foreach (Node wind in GetTree().GetNodesInGroup("Winds"))
         {
@@ -48,22 +50,18 @@ public partial class Wind : Node
         switch (_direction)
         {
             case WindDirection.Left:
-                _player.Rotation = Mathf.Clamp(
-                    _player.Rotation - _power * (float)delta,
-                    Mathf.DegToRad(-75), Mathf.DegToRad(75));
+                _playerController.PlayerMoveHandler.ReduceRotation(
+                    _power * (float)delta);
                 break;
             case WindDirection.Right:
-                _player.Rotation = Mathf.Clamp(
-                    _player.Rotation + _power * (float)delta,
-                    Mathf.DegToRad(-75), Mathf.DegToRad(75));
+                _playerController.PlayerMoveHandler.AddRotation(_power *
+                    (float)delta);
                 break;
             default:
                 YumihoshiDebug.Error<Wind>("机制-风",
                     $"启用{_direction.ToString()}风时方向错误");
                 return;
         }
-
-        _player.MoveAndSlide();
     }
 
     public void Init(WindDirection direction, float power, float duration)

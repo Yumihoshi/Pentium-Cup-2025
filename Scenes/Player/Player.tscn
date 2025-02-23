@@ -19,10 +19,10 @@ polygon = PackedVector2Array(0, 0, 5, 0, 0, -13, -5, 0)
 [node name="View" type="Node" parent="MVC"]
 script = ExtResource("2_wlyai")
 
-[node name="Controller" type="Node" parent="MVC" node_paths=PackedStringArray("_player", "_firePoint")]
+[node name="Controller" type="Node" parent="MVC" node_paths=PackedStringArray("_firePoint", "_player")]
 script = ExtResource("3_de56j")
-_player = NodePath("../..")
 _firePoint = NodePath("../../FirePoint")
+_player = NodePath("../..")
 
 [node name="FirePoint" type="Node2D" parent="."]
 position = Vector2(0, -19)
