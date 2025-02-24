@@ -6,11 +6,8 @@
 // @description:
 // *****************************************************************************
 
-using System;
 using LumiVerseFramework.Common;
-using PentiumCup2025.Scripts.Commons;
 using PentiumCup2025.Scripts.Interfaces;
-using PentiumCup2025.Scripts.Managers;
 using PentiumCup2025.Scripts.MVC.Models.Weather;
 
 namespace PentiumCup2025.Scripts.MVC.Controllers.Weather;

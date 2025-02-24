@@ -6,7 +6,6 @@
 // @description:
 // *****************************************************************************
 
-using System;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using Godot;
@@ -21,6 +20,24 @@ namespace PentiumCup2025.Scripts.Managers;
 
 public partial class WeatherManager : Singleton<WeatherManager>
 {
+    [Signal]
+    public delegate void EnableGenerateWeatherChangedEventHandler(bool status);
+
+    [Signal]
+    public delegate void WeatherListAddedEventHandler(WeatherType newWeather);
+
+    [Signal]
+    public delegate void WeatherListRemovedEventHandler(WeatherType oldWeather);
+
+    [Signal]
+    public delegate void WeatherListResetEventHandler();
+
+    private bool _enableGenerateWeather = true;
+    private float _interval;
+    private float _timer;
+
+    private WeatherFactory _weatherFactory;
+
     public bool EnableGenerateWeather
     {
         get => _enableGenerateWeather;
@@ -33,26 +50,8 @@ public partial class WeatherManager : Singleton<WeatherManager>
         }
     }
 
-    private bool _enableGenerateWeather = true;
-
-    private WeatherFactory _weatherFactory;
-    private float _timer;
-    private float _interval;
-
-    public ObservableCollection<WeatherType> WeatherList { get; private set; } =
+    public ObservableCollection<WeatherType> WeatherList { get; } =
         new();
-
-    [Signal]
-    public delegate void WeatherListAddedEventHandler(WeatherType newWeather);
-
-    [Signal]
-    public delegate void WeatherListRemovedEventHandler(WeatherType oldWeather);
-
-    [Signal]
-    public delegate void WeatherListResetEventHandler();
-
-    [Signal]
-    public delegate void EnableGenerateWeatherChangedEventHandler(bool status);
 
     public override void _EnterTree()
     {
@@ -104,18 +103,14 @@ public partial class WeatherManager : Singleton<WeatherManager>
                 if (args.NewItems is null) return;
                 // 发送天气添加的信号
                 foreach (WeatherType weatherType in args.NewItems)
-                {
                     EmitSignal(SignalName.WeatherListAdded, (int)weatherType);
-                }
 
                 break;
             case NotifyCollectionChangedAction.Remove:
                 if (args.OldItems is null) return;
                 // 发送天气删除的信号
                 foreach (WeatherType weatherType in args.OldItems)
-                {
                     EmitSignal(SignalName.WeatherListRemoved, (int)weatherType);
-                }
 
                 break;
             case NotifyCollectionChangedAction.Reset:

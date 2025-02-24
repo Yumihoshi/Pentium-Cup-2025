@@ -6,7 +6,6 @@
 // @description:
 // *****************************************************************************
 
-using System;
 using Godot;
 using LumiVerseFramework.Common;
 using PentiumCup2025.Scripts.Managers;
@@ -21,16 +20,18 @@ public enum FallingStoneDirectionType
 
 public partial class FallingStone : Area2D
 {
-    [ExportGroup("陨石属性")] [Export]
+    private Vector2 _direction = Vector2.Zero;
+
+    private CharacterBody2D _player;
+    private Vector2 _targetPos;
+
+    [ExportGroup("陨石属性")]
+    [Export]
     public FallingStoneDirectionType Direction { get; set; } =
         FallingStoneDirectionType.Vertical;
 
     [Export] public float Speed { get; set; } = 50f;
     [Export] public int Damage { get; set; } = 20;
-
-    private CharacterBody2D _player;
-    private Vector2 _targetPos;
-    private Vector2 _direction = Vector2.Zero;
 
     public override void _Ready()
     {
@@ -70,6 +71,7 @@ public partial class FallingStone : Area2D
         if (body is not CharacterBody2D player)
             return;
         ModelsManager.Instance.PlayerModelData.Damage(Damage);
+        QueueFree();
     }
 
     private void OnAreaEntered(Area2D area)
