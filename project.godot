@@ -59,6 +59,12 @@ folder_colors={
 "res://Scripts/": "blue"
 }
 
+[global_group]
+
+FallingStones=""
+Fireworks="子弹"
+Player=""
+
 [input]
 
 dialogic_default_action={
@@ -100,6 +106,7 @@ SwitchFullscreen={
 
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Firework"
+2d_physics/layer_3="FallingStone"
 
 [physics]
 

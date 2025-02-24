@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bod83whf8x4rj"]
+
+[ext_resource type="Script" path="res://Scripts/MVC/Models/Weather/FallingStoneModel.cs" id="1_k0d5s"]
+
+[resource]
+script = ExtResource("1_k0d5s")
+MinSpawnInterval = 0.5
+MaxSpawnInterval = 1.0

@@ -18,8 +18,6 @@ namespace PentiumCup2025.Scripts.MVC.Controllers.Weather;
 
 public class WindController : IWeather
 {
-    private readonly Random _random = new();
-
     public void Generate(Node parent)
     {
         PackedScene windScene =
@@ -31,12 +29,23 @@ public class WindController : IWeather
     }
 
     /// <summary>
+    /// 获取间隔
+    /// </summary>
+    /// <returns></returns>
+    public float GetInterval()
+    {
+        return Common.GetRandomFloat(
+            ModelsManager.Instance.WindModelData.MinInterval,
+            ModelsManager.Instance.WindModelData.MaxInterval);
+    }
+
+    /// <summary>
     /// 随机生成一个风向
     /// </summary>
     /// <returns></returns>
     private WindDirection GetRandomDirection()
     {
-        return (WindDirection)_random.Next(1, 3);
+        return (WindDirection)Common.GetRandomInt(1, 3);
     }
 
     /// <summary>

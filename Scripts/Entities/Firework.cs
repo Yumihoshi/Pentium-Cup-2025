@@ -39,4 +39,9 @@ public partial class Firework : Area2D
         Position += new Vector2(0, -1).Rotated(Rotation) * _speed *
                     (float)delta;
     }
+
+    private void OnAreaEnter(Area2D area)
+    {
+        QueueFree();
+    }
 }

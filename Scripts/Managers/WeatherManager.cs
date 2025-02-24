@@ -12,6 +12,8 @@ using System.Collections.Specialized;
 using Godot;
 using LumiVerseFramework.Base;
 using LumiVerseFramework.Common;
+using PentiumCup2025.Scripts.Commons;
+using PentiumCup2025.Scripts.Interfaces;
 using PentiumCup2025.Scripts.MVC.Controllers.Weather;
 using PentiumCup2025.Scripts.MVC.Models.Weather;
 
@@ -19,7 +21,23 @@ namespace PentiumCup2025.Scripts.Managers;
 
 public partial class WeatherManager : Singleton<WeatherManager>
 {
+    public bool EnableGenerateWeather
+    {
+        get => _enableGenerateWeather;
+        set
+        {
+            if (value == _enableGenerateWeather) return;
+            _enableGenerateWeather = value;
+            EmitSignal(SignalName.EnableGenerateWeatherChanged,
+                _enableGenerateWeather);
+        }
+    }
+
+    private bool _enableGenerateWeather = true;
+
     private WeatherFactory _weatherFactory;
+    private float _timer;
+    private float _interval;
 
     public ObservableCollection<WeatherType> WeatherList { get; private set; } =
         new();
@@ -33,6 +51,9 @@ public partial class WeatherManager : Singleton<WeatherManager>
     [Signal]
     public delegate void WeatherListResetEventHandler();
 
+    [Signal]
+    public delegate void EnableGenerateWeatherChangedEventHandler(bool status);
+
     public override void _EnterTree()
     {
         base._EnterTree();
@@ -40,21 +61,26 @@ public partial class WeatherManager : Singleton<WeatherManager>
         WeatherList.CollectionChanged += OnWeatherListChanged;
     }
 
-    public override async void _Ready()
+    public override void _Ready()
     {
         base._Ready();
         _weatherFactory = new WeatherFactory();
-        while (true)
-        {
-            _weatherFactory.GenerateWeather(WeatherType.Wind)
-                .Generate(GetNode("/root/GameScene"));
-            WeatherList.Add(WeatherType.Wind);
-            await ToSignal(
-                GetTree()
-                    .CreateTimer(
-                        _weatherFactory.GetRandomWindGenerateInterval()),
-                "timeout");
-        }
+    }
+
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+        if (!EnableGenerateWeather) return;
+        _timer += (float)delta;
+        if (_timer < _interval) return;
+        // 生成新的天气
+        IWeather newWeather =
+            _weatherFactory.GenerateWeather(WeatherType.FallingStone);
+        newWeather.Generate(GetNode("/root/GameScene"));
+        WeatherList.Add(WeatherType.FallingStone);
+        // 更新计时器
+        _interval = newWeather.GetInterval();
+        _timer = 0;
     }
 
     public override void _ExitTree()
@@ -90,6 +116,7 @@ public partial class WeatherManager : Singleton<WeatherManager>
                 {
                     EmitSignal(SignalName.WeatherListRemoved, (int)weatherType);
                 }
+
                 break;
             case NotifyCollectionChangedAction.Reset:
                 // 发送天气重置的信号
@@ -103,5 +130,14 @@ public partial class WeatherManager : Singleton<WeatherManager>
                 YumihoshiDebug.Error<WeatherManager>("天气管理器单例", "未知的天气列表变化类型");
                 return;
         }
+    }
+
+    /// <summary>
+    /// 随机获取天气
+    /// </summary>
+    /// <returns></returns>
+    public WeatherType GetRandomWeatherType()
+    {
+        return (WeatherType)Common.GetRandomInt(1, 7);
     }
 }

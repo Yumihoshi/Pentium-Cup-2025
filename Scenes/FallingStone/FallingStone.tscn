@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://vycmr87u2git"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/FallingStone.cs" id="1_ve5jd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_indb3"]
+radius = 36.0
+
+[node name="FallingStone" type="Area2D" groups=["FallingStones"]]
+scale = Vector2(0.159999, 0.159999)
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_ve5jd")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.757507, 0.605252, 0.261756, 1)
+polygon = PackedVector2Array(-15, -47, 18, -47, 51, 0, 1, 51, -47, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -4)
+shape = SubResource("CircleShape2D_indb3")
+
+[connection signal="area_entered" from="." to="." method="OnAreaEntered"]
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

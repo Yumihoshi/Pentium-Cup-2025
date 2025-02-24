@@ -7,6 +7,7 @@
 // *****************************************************************************
 
 using Godot;
+using LumiVerseFramework.Common;
 
 namespace PentiumCup2025.Scripts.MVC.Models.Player;
 
@@ -35,7 +36,7 @@ public partial class PlayerModel : Resource
     /// 加速叠加的速度
     /// </summary>
     [Export]
-    public float SpeedUpAddValue { get; set; } = 1500;
+    public float SpeedUpAddValue { get; set; } = 3000;
 
     [ExportGroup("玩家血量")] [Export] public int MaxHealth { get; set; } = 100;
 
@@ -66,6 +67,8 @@ public partial class PlayerModel : Resource
     public void Damage(int damage)
     {
         CurrentHealth = Mathf.Clamp(CurrentHealth - damage, 0, MaxHealth);
+        YumihoshiDebug.Print<PlayerModel>("玩家受伤",
+            $"受到伤害{damage}，当前血量{CurrentHealth}");
     }
 
     /// <summary>
@@ -75,5 +78,7 @@ public partial class PlayerModel : Resource
     public void Heal(int heal)
     {
         CurrentHealth = Mathf.Clamp(CurrentHealth + heal, 0, MaxHealth);
+        YumihoshiDebug.Print<PlayerModel>("玩家治疗",
+            $"受到治疗{heal}，当前血量{CurrentHealth}");
     }
 }
