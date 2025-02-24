@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cstuwrp7ebrri"]
+[gd_scene load_steps=9 format=3 uid="uid://cstuwrp7ebrri"]
 
 [ext_resource type="PackedScene" uid="uid://bdf6v5m6iri0g" path="res://Scenes/Player/Player.tscn" id="2_j52dp"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_61oox"]
@@ -11,6 +11,11 @@ script = ExtResource("5_dlq1y")
 duration = 1.0
 transition = 1
 ease = 1
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7v5ph"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vxuud"]
 
 [node name="GameScene" type="Node"]
 
@@ -41,3 +46,22 @@ draw_limits = true
 
 [node name="UI" parent="." instance=ExtResource("3_ygj6j")]
 layer = -99
+
+[node name="AirWalls" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="AirWalls"]
+position = Vector2(-196, -5)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AirWalls/StaticBody2D"]
+position = Vector2(13, -71)
+shape = SubResource("WorldBoundaryShape2D_7v5ph")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="AirWalls"]
+position = Vector2(197, -5)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AirWalls/StaticBody2D2"]
+position = Vector2(-13, -71)
+rotation = -1.57079
+shape = SubResource("WorldBoundaryShape2D_vxuud")
