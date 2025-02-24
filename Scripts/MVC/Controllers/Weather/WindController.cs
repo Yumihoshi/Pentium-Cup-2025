@@ -6,7 +6,6 @@
 // @description:
 // *****************************************************************************
 
-using System;
 using Godot;
 using PentiumCup2025.Scripts.Commons;
 using PentiumCup2025.Scripts.Entities;

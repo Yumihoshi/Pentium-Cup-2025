@@ -6,7 +6,6 @@
 // @description:
 // *****************************************************************************
 
-using System;
 using Godot;
 using LumiVerseFramework.Common;
 using PentiumCup2025.Scripts.Commons;
@@ -34,7 +33,7 @@ public class FallingStoneController : IWeather
         Vector2 randomPos = Common
             .GetRandomScreenTopPos(screenSize);
         randomPos = parent.GetViewport().GetCanvasTransform()
-                        .AffineInverse() * randomPos;
+            .AffineInverse() * randomPos;
         fallingStone.GlobalPosition = randomPos;
         YumihoshiDebug.Print<FallingStoneController>("陨石生成",
             "位置：" + fallingStone.GlobalPosition);
