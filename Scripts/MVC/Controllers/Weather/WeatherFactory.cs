@@ -17,8 +17,6 @@ namespace PentiumCup2025.Scripts.MVC.Controllers.Weather;
 
 public class WeatherFactory
 {
-    private readonly Random random = new();
-
     /// <summary>
     /// 创建天气
     /// </summary>
@@ -31,8 +29,6 @@ public class WeatherFactory
             // TODO: 天气工厂实现其他天气
             case WeatherType.Wind:
                 return new WindController();
-            case WeatherType.Sunny:
-                return null;
             case WeatherType.Rain:
                 return null;
             case WeatherType.Thunder:
@@ -40,30 +36,10 @@ public class WeatherFactory
             case WeatherType.Fog:
                 return null;
             case WeatherType.FallingStone:
-                return null;
+                return new FallingStoneController();
             default:
                 YumihoshiDebug.Error<WeatherFactory>("天气工厂", "天气类型不存在");
                 return null;
         }
-    }
-
-    /// <summary>
-    /// 随机生成一个风生成间隔
-    /// </summary>
-    /// <returns></returns>
-    public float GetRandomWindGenerateInterval()
-    {
-        return Common.GetRandomFloat(
-            ModelsManager.Instance.WindModelData.MinInterval,
-            ModelsManager.Instance.WindModelData.MaxInterval);
-    }
-
-    /// <summary>
-    /// 随机获取天气
-    /// </summary>
-    /// <returns></returns>
-    public WeatherType GetRandomWeatherType()
-    {
-        return (WeatherType)random.Next(1, 7);
     }
 }

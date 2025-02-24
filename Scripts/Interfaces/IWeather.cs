@@ -13,4 +13,5 @@ namespace PentiumCup2025.Scripts.Interfaces;
 public interface IWeather
 {
     public void Generate(Node parent);
+    public float GetInterval();
 }

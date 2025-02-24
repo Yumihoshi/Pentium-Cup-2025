@@ -17,16 +17,21 @@ public partial class ModelsManager : Singleton<ModelsManager>
 {
     public PlayerModel PlayerModelData { get; private set; }
     public WindModel WindModelData { get; private set; }
+    public FallingStoneModel FallingStoneModelData { get; private set; }
 
     public override void _Ready()
     {
         base._Ready();
+        // 获取模型数据
         PlayerModelData =
             GD.Load<PlayerModel>(
                 "res://Assets/Resources/Player/PlayerModel.tres");
         WindModelData =
             GD.Load<WindModel>(
                 "res://Assets/Resources/Weather/WindModel.tres");
+        FallingStoneModelData = GD.Load<FallingStoneModel>(
+            "res://Assets/Resources/Weather/FallingStoneModel.tres");
+        // 初始化模型数据
         PlayerModelData.Init();
     }
 }

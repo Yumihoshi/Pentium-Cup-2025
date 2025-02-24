@@ -36,7 +36,7 @@ public partial class PlayerModel : Resource
     /// 加速叠加的速度
     /// </summary>
     [Export]
-    public float SpeedUpAddValue { get; set; } = 1500;
+    public float SpeedUpAddValue { get; set; } = 3000;
 
     [ExportGroup("玩家血量")] [Export] public int MaxHealth { get; set; } = 100;
 

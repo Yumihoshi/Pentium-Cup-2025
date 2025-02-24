@@ -16,19 +16,17 @@ namespace PentiumCup2025.Scripts.Entities;
 public enum FallingStoneDirectionType
 {
     Vertical = 1,
-    HorizontalLeft,
-    HorizontalRight,
     TowardsPlayer
 }
 
 public partial class FallingStone : Area2D
 {
     [ExportGroup("陨石属性")] [Export]
-    private FallingStoneDirectionType _directionType =
+    public FallingStoneDirectionType Direction { get; set; } =
         FallingStoneDirectionType.Vertical;
 
-    [Export] private float _speed = 50f;
-    [Export] private int _damage = 20;
+    [Export] public float Speed { get; set; } = 50f;
+    [Export] public int Damage { get; set; } = 20;
 
     private CharacterBody2D _player;
     private Vector2 _targetPos;
@@ -50,22 +48,16 @@ public partial class FallingStone : Area2D
     public override void _Process(double delta)
     {
         base._Process(delta);
-        switch (_directionType)
+        switch (Direction)
         {
             case FallingStoneDirectionType.Vertical:
-                Position += Vector2.Down * _speed * (float)delta;
-                break;
-            case FallingStoneDirectionType.HorizontalLeft:
-                Position += Vector2.Left * _speed * (float)delta;
-                break;
-            case FallingStoneDirectionType.HorizontalRight:
-                Position += Vector2.Right * _speed * (float)delta;
+                Position += Vector2.Down * Speed * (float)delta;
                 break;
             case FallingStoneDirectionType.TowardsPlayer:
                 if (_direction == Vector2.Zero)
                     _direction = Position.DirectionTo(_player.Position)
                         .Normalized();
-                Position += _direction * _speed * (float)delta;
+                Position += _direction * Speed * (float)delta;
                 break;
             default:
                 YumihoshiDebug.Error<FallingStone>("陨石", "在Process时，未正确设置方向类型");
@@ -77,7 +69,7 @@ public partial class FallingStone : Area2D
     {
         if (body is not CharacterBody2D player)
             return;
-        ModelsManager.Instance.PlayerModelData.Damage(_damage);
+        ModelsManager.Instance.PlayerModelData.Damage(Damage);
     }
 
     private void OnAreaEntered(Area2D area)
