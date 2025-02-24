@@ -14,9 +14,9 @@ namespace PentiumCup2025.Scripts.MVC.Models.Weather;
 public enum WeatherType
 {
     Wind = 1,
+    FallingStone,
     Sunny,
     Rain,
     Thunder,
-    Fog,
-    FallingStone
+    Fog
 }

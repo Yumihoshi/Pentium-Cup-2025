@@ -73,10 +73,11 @@ public partial class WeatherManager : Singleton<WeatherManager>
         _timer += (float)delta;
         if (_timer < _interval) return;
         // 生成新的天气
+        WeatherType newWeatherType = GetRandomWeatherType();
         IWeather newWeather =
-            _weatherFactory.GenerateWeather(WeatherType.FallingStone);
+            _weatherFactory.GenerateWeather(newWeatherType);
         newWeather.Generate(GetNode("/root/GameScene"));
-        WeatherList.Add(WeatherType.FallingStone);
+        WeatherList.Add(newWeatherType);
         // 更新计时器
         _interval = newWeather.GetInterval();
         _timer = 0;
@@ -133,6 +134,8 @@ public partial class WeatherManager : Singleton<WeatherManager>
     /// <returns></returns>
     public WeatherType GetRandomWeatherType()
     {
-        return (WeatherType)Common.GetRandomInt(1, 7);
+        // TODO: 待改回来
+        // return (WeatherType)Common.GetRandomInt(1, 7);
+        return (WeatherType)Common.GetRandomInt(1, 3);
     }
 }
