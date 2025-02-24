@@ -27,5 +27,6 @@ public partial class ModelsManager : Singleton<ModelsManager>
         WindModelData =
             GD.Load<WindModel>(
                 "res://Assets/Resources/Weather/WindModel.tres");
+        PlayerModelData.Init();
     }
 }
