@@ -70,6 +70,7 @@ public partial class FallingStone : Area2D
         if (body is not CharacterBody2D player)
             return;
         ModelsManager.Instance.PlayerModelData.Damage(Damage);
+        QueueFree();
     }
 
     private void OnAreaEntered(Area2D area)
