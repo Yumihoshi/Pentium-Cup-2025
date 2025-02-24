@@ -1,18 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdf6v5m6iri0g"]
+[gd_scene load_steps=8 format=3 uid="uid://bdf6v5m6iri0g"]
 
+[ext_resource type="Texture2D" uid="uid://byxfnika2bqos" path="res://Assets/Images/Player/ship.png" id="1_ahwwv"]
 [ext_resource type="Script" path="res://Scripts/MVC/Views/Player/PlayerView.cs" id="2_wlyai"]
 [ext_resource type="Script" path="res://Scripts/MVC/Controllers/Player/PlayerController.cs" id="3_de56j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkh0x"]
+atlas = ExtResource("1_ahwwv")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yaqv0"]
+atlas = ExtResource("1_ahwwv")
+region = Rect2(32, 24, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vbfhk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkh0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yaqv0")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uydll"]
+size = Vector2(13, 17)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 0
 motion_mode = 1
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(0.678431, 0.45098, 0.913725, 1)
-polygon = PackedVector2Array(0, 0, 5, 0, 0, -13, -5, 0)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vbfhk")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.370451
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(0, 0, 5, 0, 0, -13, -5, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_uydll")
 
 [node name="MVC" type="Node" parent="."]
 
