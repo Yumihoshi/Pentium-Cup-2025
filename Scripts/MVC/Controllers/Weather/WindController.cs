@@ -7,7 +7,7 @@
 // *****************************************************************************
 
 using Godot;
-using PentiumCup2025.Scripts.Commons;
+using LumiVerseFramework.Common;
 using PentiumCup2025.Scripts.Entities;
 using PentiumCup2025.Scripts.Interfaces;
 using PentiumCup2025.Scripts.Managers;
@@ -33,7 +33,7 @@ public class WindController : IWeather
     /// <returns></returns>
     public float GetInterval()
     {
-        return Common.GetRandomFloat(
+        return YumihoshiRandom.GetRandomFloat(
             ModelsManager.Instance.WindModelData.MinInterval,
             ModelsManager.Instance.WindModelData.MaxInterval);
     }
@@ -44,7 +44,7 @@ public class WindController : IWeather
     /// <returns></returns>
     private WindDirection GetRandomDirection()
     {
-        return (WindDirection)Common.GetRandomInt(1, 3);
+        return (WindDirection)YumihoshiRandom.GetRandomInt(1, 3);
     }
 
     /// <summary>
@@ -53,7 +53,7 @@ public class WindController : IWeather
     /// <returns></returns>
     private float GetRandomDuration()
     {
-        return Common.GetRandomFloat(
+        return YumihoshiRandom.GetRandomFloat(
             ModelsManager.Instance.WindModelData.MinDuration,
             ModelsManager.Instance.WindModelData.MaxDuration);
     }
@@ -64,7 +64,7 @@ public class WindController : IWeather
     /// <returns></returns>
     private float GetRandomPower()
     {
-        return Common.GetRandomFloat(
+        return YumihoshiRandom.GetRandomFloat(
             ModelsManager.Instance.WindModelData.MinPower,
             ModelsManager.Instance.WindModelData.MaxPower);
     }

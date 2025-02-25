@@ -11,7 +11,6 @@ using System.Collections.Specialized;
 using Godot;
 using LumiVerseFramework.Base;
 using LumiVerseFramework.Common;
-using PentiumCup2025.Scripts.Commons;
 using PentiumCup2025.Scripts.Interfaces;
 using PentiumCup2025.Scripts.MVC.Controllers.Weather;
 using PentiumCup2025.Scripts.MVC.Models.Weather;
@@ -136,6 +135,6 @@ public partial class WeatherManager : Singleton<WeatherManager>
     {
         // TODO: 待改回来
         // return (WeatherType)Common.GetRandomInt(1, 7);
-        return (WeatherType)Common.GetRandomInt(1, 3);
+        return (WeatherType)YumihoshiRandom.GetRandomInt(1, 3);
     }
 }

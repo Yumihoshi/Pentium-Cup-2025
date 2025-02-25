@@ -32,11 +32,10 @@ public class FallingStoneController : IWeather
         Vector2 screenSize = parent.GetViewport().GetVisibleRect().Size;
         Vector2 randomPos = Common
             .GetRandomScreenTopPos(screenSize);
-        randomPos = parent.GetViewport().GetCanvasTransform()
-            .AffineInverse() * randomPos;
-        fallingStone.GlobalPosition = randomPos;
+        randomPos = YumihoshiConvert.ConvertScreenToWorld(randomPos, parent);
+        fallingStone.Position = randomPos;
         YumihoshiDebug.Print<FallingStoneController>("陨石生成",
-            "位置：" + fallingStone.GlobalPosition);
+            "位置：" + fallingStone.Position);
         parent.AddChild(fallingStone);
     }
 
@@ -46,7 +45,7 @@ public class FallingStoneController : IWeather
     /// <returns></returns>
     public float GetInterval()
     {
-        return Common.GetRandomFloat(
+        return YumihoshiRandom.GetRandomFloat(
             ModelsManager.Instance.FallingStoneModelData.MinSpawnInterval,
             ModelsManager.Instance.FallingStoneModelData.MaxSpawnInterval);
     }
@@ -57,6 +56,6 @@ public class FallingStoneController : IWeather
     /// <returns></returns>
     private FallingStoneDirectionType GetRandomDirection()
     {
-        return (FallingStoneDirectionType)Common.GetRandomInt(1, 3);
+        return (FallingStoneDirectionType)YumihoshiRandom.GetRandomInt(1, 3);
     }
 }
