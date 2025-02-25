@@ -46,8 +46,13 @@ public class FallingStoneController : IWeather
     public float GetInterval()
     {
         return YumihoshiRandom.GetRandomFloat(
-            ModelsManager.Instance.FallingStoneModelData.MinSpawnInterval,
-            ModelsManager.Instance.FallingStoneModelData.MaxSpawnInterval);
+            ModelsManager.Instance.FallingStoneData.MinSpawnInterval,
+            ModelsManager.Instance.FallingStoneData.MaxSpawnInterval);
+    }
+
+    public float GetDuration()
+    {
+        return ModelsManager.Instance.FallingStoneData.LifeTime;
     }
 
     /// <summary>

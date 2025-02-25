@@ -17,13 +17,21 @@ namespace PentiumCup2025.Scripts.MVC.Controllers.Weather;
 
 public class WindController : IWeather
 {
+    private readonly WindDirection _direction;
+    private readonly float _duration;
+    private readonly float _power;
+
+    public WindController()
+    {
+        _duration = GetRandomDuration();
+        _power = GetRandomPower();
+        _direction = GetRandomDirection();
+    }
+
     public void Generate(Node parent)
     {
-        PackedScene windScene =
-            GD.Load<PackedScene>("res://Scenes/Weather/Wind.tscn");
-        Wind wind = windScene.Instantiate<Wind>();
-        wind.Init(GetRandomDirection(), GetRandomPower(), GetRandomDuration());
-        parent.AddChild(wind);
+        Wind wind = (Wind)parent.GetTree().GetNodesInGroup("Winds")[0];
+        wind.Init(_direction, _power, _duration);
         wind.Enable();
     }
 
@@ -34,8 +42,13 @@ public class WindController : IWeather
     public float GetInterval()
     {
         return YumihoshiRandom.GetRandomFloat(
-            ModelsManager.Instance.WindModelData.MinInterval,
-            ModelsManager.Instance.WindModelData.MaxInterval);
+            ModelsManager.Instance.WindData.MinInterval,
+            ModelsManager.Instance.WindData.MaxInterval);
+    }
+
+    public float GetDuration()
+    {
+        return _duration;
     }
 
     /// <summary>
@@ -54,8 +67,8 @@ public class WindController : IWeather
     private float GetRandomDuration()
     {
         return YumihoshiRandom.GetRandomFloat(
-            ModelsManager.Instance.WindModelData.MinDuration,
-            ModelsManager.Instance.WindModelData.MaxDuration);
+            ModelsManager.Instance.WindData.MinDuration,
+            ModelsManager.Instance.WindData.MaxDuration);
     }
 
     /// <summary>
@@ -65,7 +78,7 @@ public class WindController : IWeather
     private float GetRandomPower()
     {
         return YumihoshiRandom.GetRandomFloat(
-            ModelsManager.Instance.WindModelData.MinPower,
-            ModelsManager.Instance.WindModelData.MaxPower);
+            ModelsManager.Instance.WindData.MinPower,
+            ModelsManager.Instance.WindData.MaxPower);
     }
 }

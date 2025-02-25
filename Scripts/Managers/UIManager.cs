@@ -14,10 +14,14 @@ public partial class UIManager : Singleton<UIManager>
         _windLabel = GetNode<Label>("/root/GameScene/UI/WindLabel");
     }
 
-    public void UpdateWindLabel(WindDirection direction, float power,
-        float duration)
+    public override void _Process(double delta)
     {
-        _windLabel.Text =
-            $"当前\n风向：{direction.ToString()}\n风力：{power}\n持续时间：{duration:F2}";
+        base._Process(delta);
+        _windLabel.Text = "当前天气\n";
+        foreach (WeatherType weather in WeatherManager.Instance.WeatherList)
+        {
+            if (weather == WeatherType.FallingStone) continue;
+            _windLabel.Text += weather + "\n";
+        }
     }
 }

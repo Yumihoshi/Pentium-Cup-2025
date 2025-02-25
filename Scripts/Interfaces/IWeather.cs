@@ -14,4 +14,5 @@ public interface IWeather
 {
     public void Generate(Node parent);
     public float GetInterval();
+    public float GetDuration();
 }

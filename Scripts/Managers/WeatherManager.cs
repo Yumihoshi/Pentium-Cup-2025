@@ -77,6 +77,10 @@ public partial class WeatherManager : Singleton<WeatherManager>
             _weatherFactory.GenerateWeather(newWeatherType);
         newWeather.Generate(GetNode("/root/GameScene"));
         WeatherList.Add(newWeatherType);
+        GetTree().CreateTimer(newWeather.GetDuration()).Timeout += () =>
+        {
+            WeatherList.Remove(newWeatherType);
+        };
         // 更新计时器
         _interval = newWeather.GetInterval();
         _timer = 0;
@@ -135,6 +139,11 @@ public partial class WeatherManager : Singleton<WeatherManager>
     {
         // TODO: 待改回来
         // return (WeatherType)Common.GetRandomInt(1, 7);
-        return (WeatherType)YumihoshiRandom.GetRandomInt(1, 3);
+        return (WeatherType)YumihoshiRandom.GetRandomInt(1, 4);
+    }
+
+    public void RemoveWeather(WeatherType weatherType)
+    {
+        WeatherList.Remove(weatherType);
     }
 }

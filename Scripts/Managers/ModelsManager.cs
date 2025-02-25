@@ -15,23 +15,26 @@ namespace PentiumCup2025.Scripts.Managers;
 
 public partial class ModelsManager : Singleton<ModelsManager>
 {
-    public PlayerModel PlayerModelData { get; private set; }
-    public WindModel WindModelData { get; private set; }
-    public FallingStoneModel FallingStoneModelData { get; private set; }
+    public PlayerModel PlayerData { get; private set; }
+    public WindModel WindData { get; private set; }
+    public FallingStoneModel FallingStoneData { get; private set; }
+    public RainModel RainData { get; private set; }
 
-    public override void _Ready()
+    public override void _EnterTree()
     {
-        base._Ready();
+        base._EnterTree();
         // 获取模型数据
-        PlayerModelData =
+        PlayerData =
             GD.Load<PlayerModel>(
                 "res://Assets/Resources/Player/PlayerModel.tres");
-        WindModelData =
+        WindData =
             GD.Load<WindModel>(
                 "res://Assets/Resources/Weather/WindModel.tres");
-        FallingStoneModelData = GD.Load<FallingStoneModel>(
+        FallingStoneData = GD.Load<FallingStoneModel>(
             "res://Assets/Resources/Weather/FallingStoneModel.tres");
+        RainData =
+            GD.Load<RainModel>("res://Assets/Resources/Weather/RainModel.tres");
         // 初始化模型数据
-        PlayerModelData.Init();
+        PlayerData.Init();
     }
 }

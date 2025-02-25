@@ -8,7 +8,6 @@
 
 using Godot;
 using LumiVerseFramework.Common;
-using PentiumCup2025.Scripts.Managers;
 using PentiumCup2025.Scripts.MVC.Controllers.Player;
 using PentiumCup2025.Scripts.MVC.Models.Weather;
 
@@ -20,7 +19,7 @@ public partial class Wind : Node
     private float _duration;
     private bool _isEnabled;
     private CharacterBody2D _player;
-    private PlayerController _playerController;
+    private PlayerMove _playerMove;
     private float _power;
     private SceneTreeTimer _timer;
 
@@ -28,7 +27,7 @@ public partial class Wind : Node
     {
         base._Ready();
         _player = GetTree().GetNodesInGroup("Player")[0] as CharacterBody2D;
-        _playerController = _player.GetNode<PlayerController>("MVC/Controller");
+        _playerMove = _player.GetNode<PlayerMove>("MVC/Controller/Move");
         // 销毁其他风
         foreach (Node wind in GetTree().GetNodesInGroup("Winds"))
         {
@@ -36,8 +35,6 @@ public partial class Wind : Node
             if (wind1 == this) continue;
             wind1.Disable();
         }
-
-        GetTree().GetNodesInGroup("Winds");
     }
 
     public override void _Process(double delta)
@@ -45,17 +42,15 @@ public partial class Wind : Node
         base._Process(delta);
         if (!_isEnabled) return;
         // 风生效
-        UIManager.Instance.UpdateWindLabel(_direction, _power,
-            (float)_timer.TimeLeft);
         switch (_direction)
         {
             case WindDirection.Left:
-                _playerController.PlayerMoveHandler.ReduceRotation(
+                _playerMove.ReduceRotation(
                     _power * (float)delta);
                 break;
             case WindDirection.Right:
-                _playerController.PlayerMoveHandler.AddRotation(_power *
-                    (float)delta);
+                _playerMove.AddRotation(_power *
+                                        (float)delta);
                 break;
             default:
                 YumihoshiDebug.Error<Wind>("机制-风",
@@ -75,7 +70,7 @@ public partial class Wind : Node
     {
         // 延时销毁
         _timer = GetTree().CreateTimer(_duration);
-        _timer.Timeout += QueueFree;
+        _timer.Timeout += Disable;
         // 开始影响
         _isEnabled = true;
         YumihoshiDebug.Print<Wind>("机制-风",
@@ -85,6 +80,5 @@ public partial class Wind : Node
     public void Disable()
     {
         _isEnabled = false;
-        QueueFree();
     }
 }

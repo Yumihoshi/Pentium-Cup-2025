@@ -12,20 +12,29 @@ using PentiumCup2025.Scripts.Managers;
 
 namespace PentiumCup2025.Scripts.MVC.Controllers.Player;
 
-public class PlayerMove
+public partial class PlayerMove : Node
 {
-    private readonly CharacterBody2D _player;
+    [Signal]
+    public delegate void OnSpeedUpEventHandler(bool isSpeedUp);
+
     private Vector2 _inputDirection = Vector2.Zero;
 
-    public PlayerMove(CharacterBody2D player)
+    [ExportGroup("节点依赖")] [Export] private CharacterBody2D _player;
+
+    public override void _Process(double delta)
     {
-        _player = player;
+        base._Process(delta);
+        // 移动
+        HandleInput();
+        HandleRotate(delta);
+        bool tag = GetSpeedUp();
+        ApplyMove(delta, tag);
     }
 
     /// <summary>
     /// 处理输入
     /// </summary>
-    public void HandleInput()
+    private void HandleInput()
     {
         // 切换全屏
         if (Input.IsActionJustPressed("SwitchFullscreen"))
@@ -38,35 +47,58 @@ public class PlayerMove
     /// 处理转向
     /// </summary>
     /// <param name="delta"></param>
-    public void HandleRotate(double delta)
+    private void HandleRotate(double delta)
     {
         // 处理转向
         if (_inputDirection.X > 0)
-            AddRotation(ModelsManager.Instance.PlayerModelData.RotateSpeed *
+            AddRotation(ModelsManager.Instance.PlayerData.RotateSpeed *
                         (float)delta);
         else if (_inputDirection.X < 0)
-            ReduceRotation(ModelsManager.Instance.PlayerModelData.RotateSpeed *
+            ReduceRotation(ModelsManager.Instance.PlayerData.RotateSpeed *
                            (float)delta);
-        // 获取当前朝向
-        Vector2 direction = new Vector2(0, -1).Rotated(_player.Rotation);
-        // 应用转向和速度
-        _player.Velocity = direction *
-                           ModelsManager.Instance.PlayerModelData.Speed *
-                           (float)delta;
-        _player.MoveAndSlide();
     }
 
     /// <summary>
     /// 处理加速
     /// </summary>
-    public void HandleSpeedUp()
+    private bool GetSpeedUp()
     {
         if (Input.IsActionJustPressed("SpeedUp"))
-            ModelsManager.Instance.PlayerModelData.Speed +=
-                ModelsManager.Instance.PlayerModelData.SpeedUpAddValue;
-        else if (Input.IsActionJustReleased("SpeedUp"))
-            ModelsManager.Instance.PlayerModelData.Speed -=
-                ModelsManager.Instance.PlayerModelData.SpeedUpAddValue;
+        {
+            EmitSignal(SignalName.OnSpeedUp, true);
+            return true;
+        }
+
+        if (Input.IsActionPressed("SpeedUp"))
+            return true;
+
+        if (Input.IsActionJustReleased("SpeedUp"))
+        {
+            EmitSignal(SignalName.OnSpeedUp, false);
+            return false;
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// 应用移动
+    /// </summary>
+    private void ApplyMove(double delta, bool isSpeedUp)
+    {
+        // 获取当前朝向
+        Vector2 direction = new Vector2(0, -1).Rotated(_player.Rotation);
+        // 应用转向和速度
+        if (!isSpeedUp)
+            _player.Velocity = direction *
+                               ModelsManager.Instance.PlayerData.Speed *
+                               (float)delta;
+        else
+            _player.Velocity = direction *
+                               ModelsManager.Instance.PlayerData
+                                   .SpeedUpValue *
+                               (float)delta;
+        _player.MoveAndSlide();
     }
 
     /// <summary>
@@ -78,9 +110,9 @@ public class PlayerMove
         _player.Rotation = Mathf.Clamp(
             _player.Rotation + rotationRad,
             Mathf.DegToRad(
-                ModelsManager.Instance.PlayerModelData.MinRotationDeg),
+                ModelsManager.Instance.PlayerData.MinRotationDeg),
             Mathf.DegToRad(
-                ModelsManager.Instance.PlayerModelData.MaxRotationDeg));
+                ModelsManager.Instance.PlayerData.MaxRotationDeg));
     }
 
     /// <summary>
@@ -92,8 +124,8 @@ public class PlayerMove
         _player.Rotation = Mathf.Clamp(
             _player.Rotation - rotationRad,
             Mathf.DegToRad(
-                ModelsManager.Instance.PlayerModelData.MinRotationDeg),
+                ModelsManager.Instance.PlayerData.MinRotationDeg),
             Mathf.DegToRad(
-                ModelsManager.Instance.PlayerModelData.MaxRotationDeg));
+                ModelsManager.Instance.PlayerData.MaxRotationDeg));
     }
 }
