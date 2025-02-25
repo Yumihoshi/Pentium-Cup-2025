@@ -98,6 +98,7 @@ public partial class PlayerMove : Node
                                ModelsManager.Instance.PlayerData
                                    .SpeedUpValue *
                                (float)delta;
+        _player.Velocity = new Vector2(_player.Velocity.X, 0);
         _player.MoveAndSlide();
     }
 

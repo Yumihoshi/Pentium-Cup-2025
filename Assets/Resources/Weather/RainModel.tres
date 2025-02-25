@@ -8,5 +8,3 @@ MinInterval = 3.0
 MaxInterval = 5.0
 MinDuration = 5.0
 MaxDuration = 10.0
-WindAddProbability = 0.0
-RotationReduce = 0.0
