@@ -12,20 +12,27 @@ using PentiumCup2025.Scripts.Managers;
 
 namespace PentiumCup2025.Scripts.MVC.Controllers.Player;
 
-public class PlayerMove
+public partial class PlayerMove : Node
 {
-    private readonly CharacterBody2D _player;
     private Vector2 _inputDirection = Vector2.Zero;
+    [Export] private GpuParticles2D _particles;
 
-    public PlayerMove(CharacterBody2D player)
+    [ExportGroup("节点依赖")] [Export] private CharacterBody2D _player;
+
+
+    public override void _Process(double delta)
     {
-        _player = player;
+        base._Process(delta);
+        // 移动
+        HandleInput();
+        HandleRotate(delta);
+        HandleSpeedUp();
     }
 
     /// <summary>
     /// 处理输入
     /// </summary>
-    public void HandleInput()
+    private void HandleInput()
     {
         // 切换全屏
         if (Input.IsActionJustPressed("SwitchFullscreen"))
@@ -38,7 +45,7 @@ public class PlayerMove
     /// 处理转向
     /// </summary>
     /// <param name="delta"></param>
-    public void HandleRotate(double delta)
+    private void HandleRotate(double delta)
     {
         // 处理转向
         if (_inputDirection.X > 0)
@@ -59,14 +66,20 @@ public class PlayerMove
     /// <summary>
     /// 处理加速
     /// </summary>
-    public void HandleSpeedUp()
+    private void HandleSpeedUp()
     {
         if (Input.IsActionJustPressed("SpeedUp"))
+        {
             ModelsManager.Instance.PlayerModelData.Speed +=
                 ModelsManager.Instance.PlayerModelData.SpeedUpAddValue;
+            _particles.Emitting = true;
+        }
         else if (Input.IsActionJustReleased("SpeedUp"))
+        {
             ModelsManager.Instance.PlayerModelData.Speed -=
                 ModelsManager.Instance.PlayerModelData.SpeedUpAddValue;
+            _particles.Emitting = false;
+        }
     }
 
     /// <summary>

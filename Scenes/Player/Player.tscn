@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdf6v5m6iri0g"]
+[gd_scene load_steps=11 format=3 uid="uid://bdf6v5m6iri0g"]
 
 [ext_resource type="Texture2D" uid="uid://byxfnika2bqos" path="res://Assets/Images/Player/ship.png" id="1_ahwwv"]
 [ext_resource type="Script" path="res://Scripts/MVC/Views/Player/PlayerView.cs" id="2_wlyai"]
-[ext_resource type="Script" path="res://Scripts/MVC/Controllers/Player/PlayerController.cs" id="3_de56j"]
+[ext_resource type="Script" path="res://Scripts/MVC/Controllers/Player/PlayerMove.cs" id="3_usokb"]
+[ext_resource type="Script" path="res://Scripts/MVC/Controllers/Player/PlayerAttack.cs" id="4_u58fn"]
+[ext_resource type="PackedScene" uid="uid://dewt6jccvp7ai" path="res://Scenes/Firework/Firework.tscn" id="5_4ecfg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nkh0x"]
 atlas = ExtResource("1_ahwwv")
@@ -29,6 +31,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uydll"]
 size = Vector2(13, 17)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_irp5i"]
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 6.0
+gravity = Vector3(0, 98, 0)
+linear_accel_min = 100.0
+linear_accel_max = 150.0
+radial_accel_min = 10.0
+radial_accel_max = 15.0
+scale_max = 1.5
+color = Color(1, 1, 0, 1)
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 12
 
@@ -47,10 +61,28 @@ shape = SubResource("RectangleShape2D_uydll")
 [node name="View" type="Node" parent="MVC"]
 script = ExtResource("2_wlyai")
 
-[node name="Controller" type="Node" parent="MVC" node_paths=PackedStringArray("_firePoint", "_player")]
-script = ExtResource("3_de56j")
-_firePoint = NodePath("../../FirePoint")
-_player = NodePath("../..")
+[node name="Controller" type="Node" parent="MVC"]
+
+[node name="Move" type="Node" parent="MVC/Controller" node_paths=PackedStringArray("_player", "_particles")]
+script = ExtResource("3_usokb")
+_player = NodePath("../../..")
+_particles = NodePath("../../../GPUParticles2D")
+
+[node name="Attack" type="Node" parent="MVC/Controller" node_paths=PackedStringArray("_firePoint", "_player")]
+script = ExtResource("4_u58fn")
+_firePoint = NodePath("../../../FirePoint")
+_firework = ExtResource("5_4ecfg")
+_player = NodePath("../../..")
 
 [node name="FirePoint" type="Node2D" parent="."]
 position = Vector2(0, -19)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, 7)
+emitting = false
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_irp5i")
+lifetime = 0.6
+fixed_fps = 60
+trail_enabled = true
+trail_lifetime = 0.05

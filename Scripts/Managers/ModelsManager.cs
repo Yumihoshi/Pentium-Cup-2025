@@ -19,9 +19,9 @@ public partial class ModelsManager : Singleton<ModelsManager>
     public WindModel WindModelData { get; private set; }
     public FallingStoneModel FallingStoneModelData { get; private set; }
 
-    public override void _Ready()
+    public override void _EnterTree()
     {
-        base._Ready();
+        base._EnterTree();
         // 获取模型数据
         PlayerModelData =
             GD.Load<PlayerModel>(

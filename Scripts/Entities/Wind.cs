@@ -20,7 +20,7 @@ public partial class Wind : Node
     private float _duration;
     private bool _isEnabled;
     private CharacterBody2D _player;
-    private PlayerController _playerController;
+    private PlayerMove _playerMove;
     private float _power;
     private SceneTreeTimer _timer;
 
@@ -28,7 +28,7 @@ public partial class Wind : Node
     {
         base._Ready();
         _player = GetTree().GetNodesInGroup("Player")[0] as CharacterBody2D;
-        _playerController = _player.GetNode<PlayerController>("MVC/Controller");
+        _playerMove = _player.GetNode<PlayerMove>("MVC/Controller/Move");
         // 销毁其他风
         foreach (Node wind in GetTree().GetNodesInGroup("Winds"))
         {
@@ -50,12 +50,12 @@ public partial class Wind : Node
         switch (_direction)
         {
             case WindDirection.Left:
-                _playerController.PlayerMoveHandler.ReduceRotation(
+                _playerMove.ReduceRotation(
                     _power * (float)delta);
                 break;
             case WindDirection.Right:
-                _playerController.PlayerMoveHandler.AddRotation(_power *
-                    (float)delta);
+                _playerMove.AddRotation(_power *
+                                        (float)delta);
                 break;
             default:
                 YumihoshiDebug.Error<Wind>("机制-风",
