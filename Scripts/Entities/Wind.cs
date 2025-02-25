@@ -8,7 +8,6 @@
 
 using Godot;
 using LumiVerseFramework.Common;
-using PentiumCup2025.Scripts.Managers;
 using PentiumCup2025.Scripts.MVC.Controllers.Player;
 using PentiumCup2025.Scripts.MVC.Models.Weather;
 
@@ -36,8 +35,6 @@ public partial class Wind : Node
             if (wind1 == this) continue;
             wind1.Disable();
         }
-
-        GetTree().GetNodesInGroup("Winds");
     }
 
     public override void _Process(double delta)
@@ -45,8 +42,6 @@ public partial class Wind : Node
         base._Process(delta);
         if (!_isEnabled) return;
         // 风生效
-        UIManager.Instance.UpdateWindLabel(_direction, _power,
-            (float)_timer.TimeLeft);
         switch (_direction)
         {
             case WindDirection.Left:
@@ -75,7 +70,7 @@ public partial class Wind : Node
     {
         // 延时销毁
         _timer = GetTree().CreateTimer(_duration);
-        _timer.Timeout += QueueFree;
+        _timer.Timeout += Disable;
         // 开始影响
         _isEnabled = true;
         YumihoshiDebug.Print<Wind>("机制-风",
@@ -85,6 +80,5 @@ public partial class Wind : Node
     public void Disable()
     {
         _isEnabled = false;
-        QueueFree();
     }
 }

@@ -33,10 +33,10 @@ public partial class PlayerModel : Resource
     public float RotateSpeed { get; set; } = 1;
 
     /// <summary>
-    /// 加速叠加的速度
+    /// 加速后的速度
     /// </summary>
     [Export]
-    public float SpeedUpAddValue { get; set; } = 3000;
+    public float SpeedUpValue { get; set; } = 7500;
 
     [ExportGroup("玩家血量")] [Export] public int MaxHealth { get; set; } = 100;
 

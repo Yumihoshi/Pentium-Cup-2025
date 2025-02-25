@@ -24,7 +24,7 @@ public partial class PlayerAttack : Node
     public override void _Ready()
     {
         base._Ready();
-        _attackCdTimer = ModelsManager.Instance.PlayerModelData.AttackInterval;
+        _attackCdTimer = ModelsManager.Instance.PlayerData.AttackInterval;
     }
 
     public override void _Process(double delta)
@@ -45,7 +45,7 @@ public partial class PlayerAttack : Node
         if (_attackCdTimer > 0) return;
         // 攻击按键
         if (!Input.IsActionJustPressed("Attack")) return;
-        _attackCdTimer = ModelsManager.Instance.PlayerModelData.AttackInterval;
+        _attackCdTimer = ModelsManager.Instance.PlayerData.AttackInterval;
         // 攻击
         if (_firework.Instantiate() is not Node2D firework)
         {
