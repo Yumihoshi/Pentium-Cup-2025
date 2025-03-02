@@ -13,7 +13,7 @@ config_version=5
 config/name="Pentium-Cup-2025"
 config/version="1.0.0"
 config/tags=PackedStringArray("奔腾杯")
-run/main_scene="res://Scenes/Levels/GameScene.tscn"
+run/main_scene="res://Scenes/GameScene.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://Assets/Images/Icon/DefaultIcon.png"
 
@@ -55,6 +55,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/phan
 
 folder_colors={
 "res://Assets/": "orange",
+"res://Prefabs/": "purple",
 "res://Scenes/": "pink",
 "res://Scripts/": "blue"
 }

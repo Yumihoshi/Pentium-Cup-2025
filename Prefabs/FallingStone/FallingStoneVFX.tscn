@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7v07vlv5oxt7"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/FallingStoneVFX.cs" id="1_b6dwi"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7itsl"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+spread = 180.0
+initial_velocity_min = 12.29
+initial_velocity_max = 39.31
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 15.23
+linear_accel_max = 15.23
+color = Color(0.430411, 0.831461, 0.661542, 1)
+
+[node name="FallingStoneVFX" type="GPUParticles2D"]
+emitting = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_7itsl")
+lifetime = 0.5
+one_shot = true
+trail_enabled = true
+trail_lifetime = 0.06
+script = ExtResource("1_b6dwi")

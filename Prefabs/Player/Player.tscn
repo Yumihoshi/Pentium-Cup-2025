@@ -4,8 +4,9 @@
 [ext_resource type="Script" path="res://Scripts/MVC/Views/Player/PlayerView.cs" id="2_wlyai"]
 [ext_resource type="Script" path="res://Scripts/MVC/Controllers/Player/PlayerMove.cs" id="3_usokb"]
 [ext_resource type="Script" path="res://Scripts/MVC/Controllers/Player/PlayerAttack.cs" id="4_u58fn"]
-[ext_resource type="PackedScene" uid="uid://dewt6jccvp7ai" path="res://Scenes/Firework/Firework.tscn" id="5_4ecfg"]
+[ext_resource type="PackedScene" uid="uid://dewt6jccvp7ai" path="res://Prefabs/Firework/Firework.tscn" id="5_4ecfg"]
 [ext_resource type="Script" path="res://Scripts/Entities/SpeedUpParticle.cs" id="6_5q5kq"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nkh0x"]
 atlas = ExtResource("1_ahwwv")

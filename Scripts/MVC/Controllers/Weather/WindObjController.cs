@@ -21,7 +21,7 @@ public class WindObjController : IWeather
     public void Generate(Node parent)
     {
         PackedScene windObjScene =
-            GD.Load<PackedScene>("res://Scenes/Weather/WindObj.tscn");
+            GD.Load<PackedScene>("res://Prefabs/Weather/WindObj.tscn");
         _windObj = windObjScene.Instantiate<WindObj>();
         _windObj.Direction = Common.GetRandomDirection();
         Vector2 screenSize = parent.GetViewport().GetVisibleRect().Size;

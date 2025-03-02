@@ -24,7 +24,7 @@ public class FallingStoneController : IWeather
     public void Generate(Node parent)
     {
         PackedScene fallingStoneScene =
-            GD.Load<PackedScene>("res://Scenes/FallingStone/FallingStone.tscn");
+            GD.Load<PackedScene>("res://Prefabs/FallingStone/FallingStone.tscn");
         FallingStone fallingStone =
             fallingStoneScene.Instantiate<FallingStone>();
         // 初始化陨石
