@@ -28,7 +28,7 @@ public class FallingStoneController : IWeather
         FallingStone fallingStone =
             fallingStoneScene.Instantiate<FallingStone>();
         // 初始化陨石
-        fallingStone.Direction = GetRandomDirection();
+        fallingStone.Direction = Common.GetRandomDirection();
         Vector2 screenSize = parent.GetViewport().GetVisibleRect().Size;
         Vector2 randomPos = Common
             .GetRandomScreenTopPos(screenSize);
@@ -53,14 +53,5 @@ public class FallingStoneController : IWeather
     public float GetDuration()
     {
         return ModelsManager.Instance.FallingStoneData.LifeTime;
-    }
-
-    /// <summary>
-    /// 获取随机方向
-    /// </summary>
-    /// <returns></returns>
-    private FallingStoneDirectionType GetRandomDirection()
-    {
-        return (FallingStoneDirectionType)YumihoshiRandom.GetRandomInt(1, 3);
     }
 }

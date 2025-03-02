@@ -8,6 +8,7 @@
 
 using Godot;
 using LumiVerseFramework.Common;
+using PentiumCup2025.Scripts.Entities.Base;
 
 namespace PentiumCup2025.Scripts.Commons;
 
@@ -22,5 +23,14 @@ public static class Common
     {
         return new Vector2(YumihoshiRandom.GetRandomFloat(0, screenSize.X),
             0);
+    }
+
+    /// <summary>
+    /// 获取随机方向
+    /// </summary>
+    /// <returns></returns>
+    public static FlyObjDirectionType GetRandomDirection()
+    {
+        return (FlyObjDirectionType)YumihoshiRandom.GetRandomInt(1, 3);
     }
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cstuwrp7ebrri"]
+[gd_scene load_steps=12 format=3 uid="uid://cstuwrp7ebrri"]
 
 [ext_resource type="PackedScene" uid="uid://bdf6v5m6iri0g" path="res://Scenes/Player/Player.tscn" id="2_j52dp"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_61oox"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_dlq1y"]
 [ext_resource type="PackedScene" uid="uid://bpxior43bokrm" path="res://Scenes/Weather/Rain.tscn" id="6_rqg4w"]
 [ext_resource type="PackedScene" uid="uid://bs1snuilfh5su" path="res://Scenes/Weather/Wind.tscn" id="7_3olef"]
+[ext_resource type="PackedScene" uid="uid://dy1jhv4vtragk" path="res://Scenes/Weather/WindObj.tscn" id="8_4xiuu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7v5ph"]
 normal = Vector2(1, 0)
@@ -74,3 +75,6 @@ position = Vector2(103, -243.915)
 
 [node name="UI" parent="." instance=ExtResource("3_ygj6j")]
 layer = -99
+
+[node name="WindObj" parent="." instance=ExtResource("8_4xiuu")]
+position = Vector2(-13, -163)

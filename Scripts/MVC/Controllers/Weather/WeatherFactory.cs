@@ -28,6 +28,8 @@ public class WeatherFactory
                 return new WindController();
             case WeatherType.Rain:
                 return new RainController();
+            case WeatherType.WindObj:
+                return new WindObjController();
             case WeatherType.Thunder:
                 return null;
             case WeatherType.Fog:

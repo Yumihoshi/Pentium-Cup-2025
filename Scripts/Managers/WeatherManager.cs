@@ -139,7 +139,7 @@ public partial class WeatherManager : Singleton<WeatherManager>
     {
         // TODO: 待改回来
         // return (WeatherType)Common.GetRandomInt(1, 7);
-        return (WeatherType)YumihoshiRandom.GetRandomInt(1, 4);
+        return (WeatherType)YumihoshiRandom.GetRandomInt(1, 5);
     }
 
     public void RemoveWeather(WeatherType weatherType)

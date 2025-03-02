@@ -16,6 +16,7 @@ public enum WeatherType
     Wind = 1,
     FallingStone,
     Rain,
+    WindObj,
     Sunny,
     Thunder,
     Fog

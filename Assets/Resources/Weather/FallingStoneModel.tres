@@ -6,3 +6,4 @@
 script = ExtResource("1_k0d5s")
 MinSpawnInterval = 0.5
 MaxSpawnInterval = 1.0
+LifeTime = 5.0
