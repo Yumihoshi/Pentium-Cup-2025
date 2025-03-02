@@ -141,9 +141,4 @@ public partial class WeatherManager : Singleton<WeatherManager>
         // return (WeatherType)Common.GetRandomInt(1, 7);
         return (WeatherType)YumihoshiRandom.GetRandomInt(1, 5);
     }
-
-    public void RemoveWeather(WeatherType weatherType)
-    {
-        WeatherList.Remove(weatherType);
-    }
 }

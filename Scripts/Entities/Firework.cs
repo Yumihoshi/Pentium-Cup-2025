@@ -15,6 +15,7 @@ public partial class Firework : Area2D
 {
     [ExportGroup("属性")] [Export] private float _lifeTime = 5f;
     [Export] private float _speed = 200f;
+    [ExportGroup("爆炸特效")] [Export] private PackedScene _vfx;
 
     private float _timer;
 
@@ -42,6 +43,10 @@ public partial class Firework : Area2D
 
     private void OnAreaEnter(Area2D area)
     {
+        GpuParticles2D newVfx = _vfx.Instantiate<GpuParticles2D>();
+        newVfx.GlobalPosition = GlobalPosition;
+        newVfx.Emitting = true;
+        GetParent().AddChild(newVfx);
         QueueFree();
     }
 }

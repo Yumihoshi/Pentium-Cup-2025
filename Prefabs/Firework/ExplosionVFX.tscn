@@ -14,6 +14,8 @@ initial_velocity_max = 39.31
 gravity = Vector3(0, 0, 0)
 linear_accel_min = 15.23
 linear_accel_max = 15.23
+scale_min = 2.0
+scale_max = 2.0
 color = Color(0.430411, 0.831461, 0.661542, 1)
 
 [node name="FallingStoneVFX" type="GPUParticles2D"]
@@ -22,6 +24,5 @@ amount = 50
 process_material = SubResource("ParticleProcessMaterial_7itsl")
 lifetime = 0.5
 one_shot = true
-trail_enabled = true
 trail_lifetime = 0.06
 script = ExtResource("1_b6dwi")

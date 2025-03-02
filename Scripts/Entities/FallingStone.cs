@@ -15,7 +15,6 @@ namespace PentiumCup2025.Scripts.Entities;
 public partial class FallingStone : FlyObj
 {
     [Export] public int Damage { get; set; } = 20;
-    [Export] private PackedScene _vfx;
 
     private void OnBodyEntered(Node2D body)
     {
@@ -28,10 +27,6 @@ public partial class FallingStone : FlyObj
     private void OnAreaEntered(Area2D area)
     {
         // 碰到火箭，销毁
-        GpuParticles2D newVfx = _vfx.Instantiate<GpuParticles2D>();
-        newVfx.GlobalPosition = GlobalPosition;
-        newVfx.Emitting = true;
-        GetParent().AddChild(newVfx);
         QueueFree();
     }
 }
