@@ -26,10 +26,13 @@ namespace MVC.Models.Player
         
         [Header("加速")] [SerializeField] private float speedUpSpeed = 6f;
         
+        [Header("攻击间隔")] [SerializeField] private float attackInterval = 0.3f;
+        
         public float RotateSpeed => rotateSpeed;
         public float MoveSpeed => moveSpeed;
         public float MinRotateAngle => minRotateAngle;
         public float MaxRotateAngle => maxRotateAngle;
         public float SpeedUpSpeed => speedUpSpeed;
+        public float AttackInterval => attackInterval;
     }
 }
