@@ -7,6 +7,7 @@
 // *****************************************************************************
 
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace MVC.Models.Player
 {
@@ -22,9 +23,13 @@ namespace MVC.Models.Player
         [Header("移动")] [SerializeField] private float rotateSpeed = 140f;
 
         [SerializeField] private float moveSpeed = 3f;
+        
+        [Header("加速")] [SerializeField] private float speedUpSpeed = 6f;
+        
         public float RotateSpeed => rotateSpeed;
         public float MoveSpeed => moveSpeed;
         public float MinRotateAngle => minRotateAngle;
         public float MaxRotateAngle => maxRotateAngle;
+        public float SpeedUpSpeed => speedUpSpeed;
     }
 }

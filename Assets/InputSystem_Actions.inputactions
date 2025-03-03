@@ -1061,7 +1061,7 @@
                     "name": "",
                     "id": "5563d7fb-98fe-4d2d-81a8-9d729d6b8ad3",
                     "path": "<Keyboard>/w",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "SpeedUp",

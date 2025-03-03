@@ -16,3 +16,4 @@ MonoBehaviour:
   maxRotateAngle: 75
   rotateSpeed: 140
   moveSpeed: 3
+  speedUpSpeed: 6
