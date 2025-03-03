@@ -6,7 +6,6 @@
 // @description:
 // *****************************************************************************
 
-using System;
 using Managers;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,15 +15,14 @@ namespace MVC.Controllers.Player
 {
     public class PlayerController : MonoBehaviour
     {
-        public UnityEvent<bool> OnSpeedUpEvent => onSpeedUpEvent;
-
         [SerializeField] private UnityEvent<bool> onSpeedUpEvent = new();
+        private float _attackTimer;
+        private GameObject _bulletPrefab;
+        private Transform _bulletSpawnPos;
         private Vector2 _inputDirection = Vector2.zero;
         private bool _isSpeedUp;
         private Rigidbody2D _rb;
-        private GameObject _bulletPrefab;
-        private Transform _bulletSpawnPos;
-        private float _attackTimer;
+        public UnityEvent<bool> OnSpeedUpEvent => onSpeedUpEvent;
 
         private void Awake()
         {

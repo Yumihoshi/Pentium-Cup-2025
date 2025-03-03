@@ -7,7 +7,6 @@
 // *****************************************************************************
 
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace MVC.Models.Player
 {
@@ -23,16 +22,43 @@ namespace MVC.Models.Player
         [Header("移动")] [SerializeField] private float rotateSpeed = 140f;
 
         [SerializeField] private float moveSpeed = 3f;
-        
+
         [Header("加速")] [SerializeField] private float speedUpSpeed = 6f;
-        
+
         [Header("攻击间隔")] [SerializeField] private float attackInterval = 0.3f;
-        
+
+        [Header("血量")] [SerializeField] private int maxHp = 100;
+
+        private int _curHp;
+
         public float RotateSpeed => rotateSpeed;
         public float MoveSpeed => moveSpeed;
         public float MinRotateAngle => minRotateAngle;
         public float MaxRotateAngle => maxRotateAngle;
         public float SpeedUpSpeed => speedUpSpeed;
         public float AttackInterval => attackInterval;
+
+        public void Init()
+        {
+            _curHp = maxHp;
+        }
+
+        /// <summary>
+        /// 受到伤害
+        /// </summary>
+        /// <param name="damage"></param>
+        public void TakeDamage(int damage)
+        {
+            _curHp = Mathf.Clamp(_curHp - damage, 0, maxHp);
+        }
+
+        /// <summary>
+        /// 治疗
+        /// </summary>
+        /// <param name="heal"></param>
+        public void Heal(int heal)
+        {
+            _curHp = Mathf.Clamp(_curHp + heal, 0, maxHp);
+        }
     }
 }

@@ -6,7 +6,6 @@
 // @description:
 // *****************************************************************************
 
-using System;
 using UnityEngine;
 
 namespace Entities.Bullet

@@ -20,6 +20,7 @@ namespace Managers
         {
             base.Awake();
             PlayerData = Resources.Load<PlayerModel>("Configs/Player Config");
+            PlayerData.Init();
         }
     }
 }
