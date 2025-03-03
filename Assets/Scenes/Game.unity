@@ -170,7 +170,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -269,6 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 480085bb8f5a4831b4992f826922a604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smoothDuration: 0.2
 --- !u!1 &577737783
 GameObject:
   m_ObjectHideFlags: 0
