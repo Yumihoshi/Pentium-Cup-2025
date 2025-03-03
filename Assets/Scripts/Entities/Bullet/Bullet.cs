@@ -6,6 +6,7 @@
 // @description:
 // *****************************************************************************
 
+using Managers;
 using UnityEngine;
 
 namespace Entities.Bullet
@@ -14,7 +15,9 @@ namespace Entities.Bullet
     {
         [SerializeField] private float lifeTime = 5f;
         [SerializeField] private float speed = 10f;
+
         private Rigidbody2D _rb;
+        // TODO: 对象池管理子弹
 
         private void Start()
         {
@@ -26,7 +29,8 @@ namespace Entities.Bullet
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (!other.CompareTag("Enemy")) return;
-            // TODO: 播放爆炸粒子特效
+            Instantiate(ResourcesManager.Instance.ExplosionPrefab,
+                transform.position, Quaternion.identity);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

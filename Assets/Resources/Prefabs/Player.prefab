@@ -253,6 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 264db341f86c4a1ca78c8b9b62a5dece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 4794043405585894037, guid: 37138c0c33167b04fa1fb90b7f5a794f, type: 3}
   onSpeedUpEvent:
     m_PersistentCalls:
       m_Calls: []
