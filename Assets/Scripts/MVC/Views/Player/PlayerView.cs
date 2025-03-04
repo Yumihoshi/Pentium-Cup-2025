@@ -17,15 +17,18 @@ namespace MVC.Views.Player
     {
         private PlayerModel _model;
         private Rigidbody2D _rb;
+        [SerializeField] private ParticleSystem speedUpVFX;
 
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
+            speedUpVFX.Stop();
         }
 
         private void Start()
         {
             _model = GetComponent<PlayerController>().Model;
+            _model.OnSpeedUpEvent += PlaySpeedUpVFX;
         }
 
         private void FixedUpdate()
@@ -55,15 +58,23 @@ namespace MVC.Views.Player
                 _rb.linearVelocity = transform.up *
                                      ModelsManager.Instance.PlayerData
                                          .MoveSpeed;
-                _model.IsSpeedUp = false;
             }
             else
             {
                 _rb.linearVelocity = transform.up *
                                      ModelsManager.Instance.PlayerData
                                          .SpeedUpSpeed;
-                _model.IsSpeedUp = true;
             }
+        }
+
+        private void PlaySpeedUpVFX(bool isSpeedUp)
+        {
+            if (isSpeedUp)
+            {
+                speedUpVFX.Play();
+            }
+            else
+                speedUpVFX.Stop();
         }
     }
 }

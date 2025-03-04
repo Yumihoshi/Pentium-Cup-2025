@@ -23,6 +23,7 @@ namespace MVC.Controllers.Player
         private void Awake()
         {
             Model = new PlayerModel(ModelsManager.Instance.PlayerData.MaxHp);
+            Model.Init();
         }
 
         private void Start()
@@ -53,8 +54,7 @@ namespace MVC.Controllers.Player
         private void OnAttack(InputValue value)
         {
             if (_attackTimer > 0) return;
-            // Instantiate(_bulletPrefab, _bulletSpawnPos.position,
-            //     transform.rotation);
+            // 发射子弹
             Bullet bullet = BulletManager.Instance.BulletPool.Get();
             bullet.Init(_bulletSpawnPos.position, transform.rotation);
             bullet.Launch();

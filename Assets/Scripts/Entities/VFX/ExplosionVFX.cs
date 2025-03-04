@@ -47,5 +47,11 @@ namespace Entities.VFX
         {
             _pool.Release(this);
         }
+
+        public void Init(Vector3 pos, Quaternion rot)
+        {
+            transform.position = pos;
+            transform.rotation = rot;
+        }
     }
 }

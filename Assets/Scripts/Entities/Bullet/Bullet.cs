@@ -31,8 +31,7 @@ namespace Entities.Bullet
             if (!other.CompareTag("Enemy")) return;
             // 播放爆炸特效
             ExplosionVFX explosion = VFXManager.Instance.ExplosionPool.Get();
-            explosion.transform.position = transform.position;
-            explosion.transform.rotation = Quaternion.identity;
+            explosion.Init(transform.position, Quaternion.identity);
             explosion.PlayVFX();
             // 销毁子弹
             Destroy(other.gameObject);
