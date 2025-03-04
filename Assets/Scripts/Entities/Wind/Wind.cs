@@ -1,27 +1,28 @@
 ﻿// *****************************************************************************
 // @author: 绘星tsuki
 // @email: xiaoyuesun915@gmail.com
-// @creationDate: 2025/03/04 20:03
+// @creationDate: 2025/03/04 21:03
 // @version: 1.0
 // @description:
 // *****************************************************************************
 
+using System;
+using HoshiVerseFramework.Base;
 using MVC.Controllers.Player;
 using UnityEngine;
 using UnityEngine.Pool;
 
-namespace Entities.FallingStone
+namespace Entities.Wind
 {
-    public class FallingStone : MonoBehaviour
+    public class Wind : MonoBehaviour
     {
-        [SerializeField] private StoneType type;
-        [SerializeField] private int damage;
-        [SerializeField] private float speed;
+        [Header("风属性配置")]
         [SerializeField] private float lifeTime = 5f;
+        [SerializeField] private float speed = 5f;
+        [SerializeField] private float effectDuration = 2f;
         private Vector3 _direction;
-        private ObjectPool<FallingStone> _pool;
+        private ObjectPool<Wind> _pool;
         private Rigidbody2D _rb;
-        public StoneType SizeType => type;
 
         private void Start()
         {
@@ -31,13 +32,24 @@ namespace Entities.FallingStone
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (!other.CompareTag("Player")) return;
-            other.GetComponent<PlayerController>().Model.TakeDamage(damage);
+            EventCenterManager.Instance.TriggerEvent(
+                new SpeedDownArg
+                {
+                    Duration = effectDuration,
+                    IsReverse = true
+                });
             ReleaseSelf();
         }
 
-        public void SetPool(ObjectPool<FallingStone> pool)
+        public void SetPool(ObjectPool<Wind> pool)
         {
             _pool = pool;
+        }
+
+        public void Init(Vector3 pos, Quaternion rot)
+        {
+            transform.position = pos;
+            transform.rotation = rot;
         }
 
         public void Launch()
@@ -54,12 +66,6 @@ namespace Entities.FallingStone
         {
             if (!gameObject.activeSelf) return;
             _pool.Release(this);
-        }
-
-        public void Init(Vector3 pos, Quaternion rot)
-        {
-            transform.position = pos;
-            transform.rotation = rot;
         }
     }
 }

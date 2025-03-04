@@ -562,6 +562,7 @@ MonoBehaviour:
   fallingStonePrefabs:
   - {fileID: 7274546895166160901, guid: c40e0e4faafc1fd439b35dbf5e4122b7, type: 3}
   - {fileID: 1513611123846578900, guid: 872b24e42da485d48b2a79683159287c, type: 3}
+  windPrefab: {fileID: 7862961361255104106, guid: aec76e72acc49a948a67d67bac179ee3, type: 3}
 --- !u!1 &2050070747
 GameObject:
   m_ObjectHideFlags: 0

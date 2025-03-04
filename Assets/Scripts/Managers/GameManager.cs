@@ -10,6 +10,7 @@ using System;
 using System.Collections;
 using Commons;
 using Entities.FallingStone;
+using Entities.Wind;
 using HoshiVerseFramework.Base;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -18,15 +19,15 @@ namespace Managers
 {
     public class GameManager : Singleton<GameManager>
     {
-        private bool _spawnFallingStone;
+        private bool _spawnState;
 
-        public bool SpawnFallingStone
+        public bool SpawnState
         {
-            get => _spawnFallingStone;
+            get => _spawnState;
             set
             {
-                if (value == _spawnFallingStone) return;
-                _spawnFallingStone = value;
+                if (value == _spawnState) return;
+                _spawnState = value;
                 OnSpawnFallingStone?.Invoke(value);
             }
         }
@@ -34,7 +35,7 @@ namespace Managers
         private void Start()
         {
             OnSpawnFallingStone += isSpawn =>
-                StartCoroutine(SpawnFallingStoneHandler(isSpawn));
+                StartCoroutine(SpawnHandler(isSpawn));
             Invoke(nameof(Init), 2f);
         }
 
@@ -42,18 +43,24 @@ namespace Managers
 
         private void Init()
         {
-            SpawnFallingStone = true;
+            SpawnState = true;
         }
 
-        private IEnumerator SpawnFallingStoneHandler(bool isSpawn)
+        private IEnumerator SpawnHandler(bool isSpawn)
         {
             while (isSpawn)
             {
+                // 生成陨石
                 Vector3 spawnPos = CommonH.GetRandomScreenTopPos();
                 FallingStone stone =
                     PoolManager.Instance.FallingStonePool.Get();
                 stone.Init(spawnPos, Quaternion.identity);
                 stone.Launch();
+                // 生成风
+                Vector3 windPos = CommonH.GetRandomScreenTopPos();
+                Wind wind = PoolManager.Instance.WindPool.Get();
+                wind.Init(windPos, Quaternion.identity);
+                wind.Launch();
                 yield return new WaitForSeconds(Random.Range(
                     ModelsManager.Instance.FlyObjData.MinSpawnInterval,
                     ModelsManager.Instance.FlyObjData.MaxSpawnInterval));

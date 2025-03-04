@@ -20,10 +20,13 @@ namespace Managers
 
         [Header("陨石")] [SerializeField]
         private List<GameObject> fallingStonePrefabs;
+        
+        [Header("风")] [SerializeField] private GameObject windPrefab;
 
         public GameObject ExplosionPrefab => explosionPrefab;
         public GameObject BulletPrefab => bulletPrefab;
 
         public List<GameObject> FallingStonePrefabs => fallingStonePrefabs;
+        public GameObject WindPrefab => windPrefab;
     }
 }

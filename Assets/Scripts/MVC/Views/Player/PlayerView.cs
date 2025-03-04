@@ -18,6 +18,7 @@ namespace MVC.Views.Player
         [SerializeField] private ParticleSystem speedUpVFX;
         private PlayerModel _model;
         private Rigidbody2D _rb;
+        private bool _rotateReverse;
 
         private void Awake()
         {
@@ -41,13 +42,27 @@ namespace MVC.Views.Player
         {
             if (_model.InputDirection == Vector2.zero) return;
             // 旋转
-            float targetRotation = Mathf.Clamp(_rb.rotation -
-                                               _model.InputDirection.x *
-                                               ModelsManager.Instance.PlayerData
-                                                   .RotateSpeed *
-                                               Time.fixedDeltaTime,
+            float targetRotation;
+            if (!_rotateReverse)
+            {
+                targetRotation = Mathf.Clamp(_rb.rotation -
+                                                _model.InputDirection.x *
+                                                ModelsManager.Instance.PlayerData
+                                                    .RotateSpeed *
+                                                Time.fixedDeltaTime,
                 ModelsManager.Instance.PlayerData.MinRotateAngle,
                 ModelsManager.Instance.PlayerData.MaxRotateAngle);
+            }
+            else
+            {
+                targetRotation = Mathf.Clamp(_rb.rotation +
+                                             _model.InputDirection.x *
+                                             ModelsManager.Instance.PlayerData
+                                                 .RotateSpeed *
+                                             Time.fixedDeltaTime,
+                    ModelsManager.Instance.PlayerData.MinRotateAngle,
+                    ModelsManager.Instance.PlayerData.MaxRotateAngle);
+            }
             _rb.MoveRotation(targetRotation);
         }
 
@@ -69,6 +84,17 @@ namespace MVC.Views.Player
                 speedUpVFX.Play();
             else
                 speedUpVFX.Stop();
+        }
+
+        public void RotateReverse(SpeedDownArg arg)
+        {
+            _rotateReverse = arg.IsReverse;
+            if (_rotateReverse) Invoke(nameof(ResetReverse), arg.Duration);
+        }
+
+        private void ResetReverse()
+        {
+            _rotateReverse = false;
         }
     }
 }

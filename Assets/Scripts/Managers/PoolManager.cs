@@ -9,6 +9,7 @@
 using Entities.Bullet;
 using Entities.FallingStone;
 using Entities.VFX;
+using Entities.Wind;
 using HoshiVerseFramework.Base;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -20,6 +21,7 @@ namespace Managers
         public ObjectPool<Bullet> BulletPool { get; private set; }
         public ObjectPool<ExplosionVFX> ExplosionVFXPool { get; private set; }
         public ObjectPool<FallingStone> FallingStonePool { get; private set; }
+        public ObjectPool<Wind> WindPool { get; private set; }
 
         private void Start()
         {
@@ -31,6 +33,8 @@ namespace Managers
             FallingStonePool = new ObjectPool<FallingStone>(CreateFallingStone,
                 GetFallingStone,
                 ReleaseFallingStone, DestroyFallingStone, true, 10, 100);
+            WindPool = new ObjectPool<Wind>(CreateWind, GetWind, ReleaseWind,
+                DestroyWind, true, 10, 100);
         }
 
         #region 子弹
@@ -117,6 +121,33 @@ namespace Managers
         private void DestroyFallingStone(FallingStone stone)
         {
             Destroy(stone.gameObject);
+        }
+
+        #endregion
+
+        #region 风
+
+        private Wind CreateWind()
+        {
+            GameObject wind = Instantiate(ResourcesManager.Instance.WindPrefab);
+            Wind windScript = wind.GetComponent<Wind>();
+            windScript.SetPool(WindPool);
+            return windScript;
+        }
+        
+        private void GetWind(Wind wind)
+        {
+            wind.gameObject.SetActive(true);
+        }
+        
+        private void ReleaseWind(Wind wind)
+        {
+            wind.gameObject.SetActive(false);
+        }
+        
+        private void DestroyWind(Wind wind)
+        {
+            Destroy(wind.gameObject);
         }
 
         #endregion

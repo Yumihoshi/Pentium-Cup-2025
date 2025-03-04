@@ -7,8 +7,10 @@
 // *****************************************************************************
 
 using Entities.Bullet;
+using HoshiVerseFramework.Base;
 using Managers;
 using MVC.Models.Player;
+using MVC.Views.Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,18 +20,22 @@ namespace MVC.Controllers.Player
     {
         private float _attackTimer;
         private Transform _bulletSpawnPos;
+        private PlayerView _view;
         public PlayerModel Model { get; private set; }
 
         private void Awake()
         {
             Model = new PlayerModel(ModelsManager.Instance.PlayerData.MaxHp);
             Model.Init();
+            _view = GetComponent<PlayerView>();
         }
 
         private void Start()
         {
             _bulletSpawnPos = GameObject.FindWithTag("Player").transform
                 .Find("FirePos");
+            // 注册减速事件
+            EventCenterManager.Instance.AddListener<SpeedDownArg>(_view.RotateReverse);
         }
 
         private void Update()
