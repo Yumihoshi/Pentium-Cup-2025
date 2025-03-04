@@ -6,6 +6,7 @@
 // @description:
 // *****************************************************************************
 
+using System.Collections.Generic;
 using HoshiVerseFramework.Base.FSM;
 using UnityEngine;
 
@@ -13,11 +14,14 @@ namespace Entities.Weather.States
 {
     public class Rainy : FsmState
     {
-        [SerializeField] private GameObject rain;
+        [SerializeField] private List<ParticleSystem> rain;
 
         private void Start()
         {
-            rain.SetActive(false);
+            foreach (ParticleSystem s in rain)
+            {
+                s.Stop();
+            }
         }
 
         public override bool OnCheck(StateContext context = null)
@@ -28,7 +32,10 @@ namespace Entities.Weather.States
         public override void OnEnter(StateContext context = null)
         {
             Debug.Log("天气进入雨天");
-            rain.SetActive(true);
+            foreach (ParticleSystem s in rain)
+            {
+                s.Play();
+            }
         }
 
         public override void OnUpdate()
@@ -42,7 +49,10 @@ namespace Entities.Weather.States
         public override void OnExit(StateContext context = null)
         {
             Debug.Log("天气退出雨天");
-            rain.SetActive(false);
+            foreach (ParticleSystem s in rain)
+            {
+                s.Stop();
+            }
         }
     }
 }
