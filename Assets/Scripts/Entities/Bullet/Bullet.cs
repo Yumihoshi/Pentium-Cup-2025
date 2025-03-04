@@ -34,6 +34,8 @@ namespace Entities.Bullet
                 PoolManager.Instance.ExplosionVFXPool.Get();
             explosion.Init(transform.position, Quaternion.identity);
             explosion.PlayVFX();
+            // 播放爆炸音效
+            AudioManager.Instance.PlaySfx("命中爆炸");
             // 销毁子弹
             Destroy(other.gameObject);
             _pool.Release(this);

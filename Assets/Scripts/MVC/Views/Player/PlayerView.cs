@@ -40,7 +40,11 @@ namespace MVC.Views.Player
 
         private void Move()
         {
-            if (_model.InputDirection == Vector2.zero) return;
+            if (_model.InputDirection == Vector2.zero)
+            {
+                AudioManager.Instance.PlayRotateSfx(false);
+                return;
+            }
             // 旋转
             float targetRotation;
             if (!_rotateReverse)
@@ -60,6 +64,8 @@ namespace MVC.Views.Player
                     ModelsManager.Instance.PlayerData.MinRotateAngle,
                     ModelsManager.Instance.PlayerData.MaxRotateAngle);
             _rb.MoveRotation(targetRotation);
+            // 播放音效
+            AudioManager.Instance.PlayRotateSfx(true);
         }
 
         private void SpeedUp()

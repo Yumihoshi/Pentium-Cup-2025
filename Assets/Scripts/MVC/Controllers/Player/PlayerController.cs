@@ -37,6 +37,13 @@ namespace MVC.Controllers.Player
             // 注册减速事件
             EventCenterManager.Instance.AddListener<SpeedDownArg>(
                 _view.RotateReverse);
+            Model.OnSpeedUpEvent += speedUp =>
+            {
+                if (!speedUp)
+                    AudioManager.Instance.StopSfx();
+                else
+                    AudioManager.Instance.PlaySfx("加速");
+            };
         }
 
         private void Update()
@@ -62,6 +69,7 @@ namespace MVC.Controllers.Player
         {
             if (_attackTimer > 0) return;
             // 发射子弹
+            AudioManager.Instance.PlaySfx("武器发射");
             Bullet bullet = PoolManager.Instance.BulletPool.Get();
             bullet.Init(_bulletSpawnPos.position, transform.rotation);
             bullet.Launch();
