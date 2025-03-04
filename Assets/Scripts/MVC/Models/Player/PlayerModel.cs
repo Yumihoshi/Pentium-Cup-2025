@@ -9,13 +9,14 @@
 using System;
 using Managers;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace MVC.Models.Player
 {
     public class PlayerModel
     {
         private int _curHp;
+
+        private Vector2 _inputDirection = Vector2.zero;
         private bool _isSpeedUp;
 
         public PlayerModel(int initHp)
@@ -33,8 +34,7 @@ namespace MVC.Models.Player
                 OnSpeedUpEvent?.Invoke(_isSpeedUp);
             }
         }
-        
-        private Vector2 _inputDirection = Vector2.zero;
+
         public Vector2 InputDirection
         {
             get => _inputDirection;

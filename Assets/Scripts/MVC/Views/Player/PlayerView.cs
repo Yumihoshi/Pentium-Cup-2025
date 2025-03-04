@@ -6,7 +6,6 @@
 // @description:
 // *****************************************************************************
 
-using System;
 using Managers;
 using MVC.Controllers.Player;
 using MVC.Models.Player;
@@ -16,14 +15,14 @@ namespace MVC.Views.Player
 {
     public class PlayerView : MonoBehaviour
     {
-        private Rigidbody2D _rb;
         private PlayerModel _model;
+        private Rigidbody2D _rb;
 
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
         }
-        
+
         private void Start()
         {
             _model = GetComponent<PlayerController>().Model;

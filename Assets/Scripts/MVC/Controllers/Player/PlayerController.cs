@@ -6,31 +6,29 @@
 // @description:
 // *****************************************************************************
 
+using Entities.Bullet;
 using Managers;
 using MVC.Models.Player;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace MVC.Controllers.Player
 {
     public class PlayerController : MonoBehaviour
     {
-        public PlayerModel Model { get; private set; }
-        
         private float _attackTimer;
-        private GameObject _bulletPrefab;
         private Transform _bulletSpawnPos;
+        public PlayerModel Model { get; private set; }
 
         private void Awake()
         {
             Model = new PlayerModel(ModelsManager.Instance.PlayerData.MaxHp);
-            _bulletPrefab = Resources.Load<GameObject>("Prefabs/Bullet");
         }
 
         private void Start()
         {
-            _bulletSpawnPos = transform.Find("FirePos");
+            _bulletSpawnPos = GameObject.FindWithTag("Player").transform
+                .Find("FirePos");
         }
 
         private void Update()
@@ -55,8 +53,11 @@ namespace MVC.Controllers.Player
         private void OnAttack(InputValue value)
         {
             if (_attackTimer > 0) return;
-            Instantiate(_bulletPrefab, _bulletSpawnPos.position,
-                transform.rotation);
+            // Instantiate(_bulletPrefab, _bulletSpawnPos.position,
+            //     transform.rotation);
+            Bullet bullet = BulletManager.Instance.BulletPool.Get();
+            bullet.Init(_bulletSpawnPos.position, transform.rotation);
+            bullet.Launch();
             _attackTimer = ModelsManager.Instance.PlayerData.AttackInterval;
         }
 

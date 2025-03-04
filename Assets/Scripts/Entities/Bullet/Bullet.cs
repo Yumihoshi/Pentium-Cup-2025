@@ -8,6 +8,7 @@
 
 using Managers;
 using UnityEngine;
+using UnityEngine.Pool;
 
 namespace Entities.Bullet
 {
@@ -16,14 +17,12 @@ namespace Entities.Bullet
         [SerializeField] private float lifeTime = 5f;
         [SerializeField] private float speed = 10f;
 
+        private ObjectPool<Bullet> _pool;
         private Rigidbody2D _rb;
-        // TODO: 对象池管理子弹
 
         private void Start()
         {
-            Destroy(gameObject, lifeTime);
             _rb = GetComponent<Rigidbody2D>();
-            _rb.linearVelocity = transform.up * speed;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -32,7 +31,38 @@ namespace Entities.Bullet
             Instantiate(ResourcesManager.Instance.ExplosionPrefab,
                 transform.position, Quaternion.identity);
             Destroy(other.gameObject);
-            Destroy(gameObject);
+            _pool.Release(this);
+        }
+
+        private void AutoDestroy()
+        {
+            _pool.Release(this);
+        }
+
+        public void SetPool(ObjectPool<Bullet> pool)
+        {
+            _pool = pool;
+        }
+
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        /// <param name="pos"></param>
+        /// <param name="rot"></param>
+        public void Init(Vector3 pos, Quaternion rot)
+        {
+            transform.position = pos;
+            transform.rotation = rot;
+        }
+
+        /// <summary>
+        /// 发射子弹
+        /// </summary>
+        public void Launch()
+        {
+            Invoke(nameof(AutoDestroy), lifeTime);
+            if (!_rb) _rb = GetComponent<Rigidbody2D>();
+            _rb.linearVelocity = transform.up * speed;
         }
     }
 }
