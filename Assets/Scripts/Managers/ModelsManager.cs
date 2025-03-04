@@ -14,13 +14,12 @@ namespace Managers
 {
     public class ModelsManager : Singleton<ModelsManager>
     {
-        public PlayerModel PlayerData { get; private set; }
+        public PlayerConfig PlayerData { get; private set; }
 
         protected override void Awake()
         {
             base.Awake();
-            PlayerData = Resources.Load<PlayerModel>("Configs/Player Config");
-            PlayerData.Init();
+            PlayerData = Resources.Load<PlayerConfig>("Configs/Player Config");
         }
     }
 }

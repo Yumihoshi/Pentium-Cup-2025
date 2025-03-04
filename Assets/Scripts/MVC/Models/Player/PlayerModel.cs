@@ -1,46 +1,57 @@
 ﻿// *****************************************************************************
 // @author: 绘星tsuki
 // @email: xiaoyuesun915@gmail.com
-// @creationDate: 2025/03/03 20:03
+// @creationDate: 2025/03/04 13:03
 // @version: 1.0
 // @description:
 // *****************************************************************************
 
+using System;
+using Managers;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace MVC.Models.Player
 {
-    [CreateAssetMenu(fileName = "Player Config", menuName = "配置/新建玩家配置",
-        order = 0)]
-    public class PlayerModel : ScriptableObject
+    public class PlayerModel
     {
-        [Header("旋转限制")] [Range(-180f, 0f)] [SerializeField]
-        private float minRotateAngle = -75f;
-
-        [Range(0f, 180f)] [SerializeField] private float maxRotateAngle = 75f;
-
-        [Header("移动")] [SerializeField] private float rotateSpeed = 140f;
-
-        [SerializeField] private float moveSpeed = 3f;
-
-        [Header("加速")] [SerializeField] private float speedUpSpeed = 6f;
-
-        [Header("攻击间隔")] [SerializeField] private float attackInterval = 0.3f;
-
-        [Header("血量")] [SerializeField] private int maxHp = 100;
-
         private int _curHp;
+        private bool _isSpeedUp;
 
-        public float RotateSpeed => rotateSpeed;
-        public float MoveSpeed => moveSpeed;
-        public float MinRotateAngle => minRotateAngle;
-        public float MaxRotateAngle => maxRotateAngle;
-        public float SpeedUpSpeed => speedUpSpeed;
-        public float AttackInterval => attackInterval;
+        public PlayerModel(int initHp)
+        {
+            _curHp = initHp;
+        }
+
+        public bool IsSpeedUp
+        {
+            get => _isSpeedUp;
+            set
+            {
+                if (_isSpeedUp == value) return;
+                _isSpeedUp = value;
+                OnSpeedUpEvent?.Invoke(_isSpeedUp);
+            }
+        }
+        
+        private Vector2 _inputDirection = Vector2.zero;
+        public Vector2 InputDirection
+        {
+            get => _inputDirection;
+            set
+            {
+                if (_inputDirection == value) return;
+                _inputDirection = value;
+                OnMoveEvent?.Invoke(_inputDirection);
+            }
+        }
+
+        public event Action<bool> OnSpeedUpEvent;
+        public event Action<Vector2> OnMoveEvent;
 
         public void Init()
         {
-            _curHp = maxHp;
+            _curHp = ModelsManager.Instance.PlayerData.MaxHp;
         }
 
         /// <summary>
@@ -49,7 +60,8 @@ namespace MVC.Models.Player
         /// <param name="damage"></param>
         public void TakeDamage(int damage)
         {
-            _curHp = Mathf.Clamp(_curHp - damage, 0, maxHp);
+            _curHp = Mathf.Clamp(_curHp - damage, 0,
+                ModelsManager.Instance.PlayerData.MaxHp);
         }
 
         /// <summary>
@@ -58,7 +70,8 @@ namespace MVC.Models.Player
         /// <param name="heal"></param>
         public void Heal(int heal)
         {
-            _curHp = Mathf.Clamp(_curHp + heal, 0, maxHp);
+            _curHp = Mathf.Clamp(_curHp + heal, 0,
+                ModelsManager.Instance.PlayerData.MaxHp);
         }
     }
 }
