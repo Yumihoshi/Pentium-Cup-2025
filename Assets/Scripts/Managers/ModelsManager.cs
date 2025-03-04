@@ -9,6 +9,7 @@
 using HoshiVerseFramework.Base;
 using MVC.Models.FlyObj;
 using MVC.Models.Player;
+using MVC.Models.Weather;
 using UnityEngine;
 
 namespace Managers
@@ -17,6 +18,7 @@ namespace Managers
     {
         public PlayerConfig PlayerData { get; private set; }
         public FlyObjConfig FlyObjData { get; private set; }
+        public WeatherConfig WeatherData { get; private set; }
 
         protected override void Awake()
         {
@@ -24,6 +26,8 @@ namespace Managers
             PlayerData = Resources.Load<PlayerConfig>("Configs/Player Config");
             FlyObjData =
                 Resources.Load<FlyObjConfig>("Configs/Fly Object Config");
+            WeatherData =
+                Resources.Load<WeatherConfig>("Configs/Weather Config");
         }
     }
 }

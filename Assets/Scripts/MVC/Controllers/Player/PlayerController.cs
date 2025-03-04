@@ -35,7 +35,8 @@ namespace MVC.Controllers.Player
             _bulletSpawnPos = GameObject.FindWithTag("Player").transform
                 .Find("FirePos");
             // 注册减速事件
-            EventCenterManager.Instance.AddListener<SpeedDownArg>(_view.RotateReverse);
+            EventCenterManager.Instance.AddListener<SpeedDownArg>(
+                _view.RotateReverse);
         }
 
         private void Update()

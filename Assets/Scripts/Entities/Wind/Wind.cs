@@ -6,7 +6,6 @@
 // @description:
 // *****************************************************************************
 
-using System;
 using HoshiVerseFramework.Base;
 using MVC.Controllers.Player;
 using UnityEngine;
@@ -16,8 +15,8 @@ namespace Entities.Wind
 {
     public class Wind : MonoBehaviour
     {
-        [Header("风属性配置")]
-        [SerializeField] private float lifeTime = 5f;
+        [Header("风属性配置")] [SerializeField] private float lifeTime = 5f;
+
         [SerializeField] private float speed = 5f;
         [SerializeField] private float effectDuration = 2f;
         private Vector3 _direction;
@@ -32,6 +31,7 @@ namespace Entities.Wind
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (!other.CompareTag("Player")) return;
+            CancelInvoke(nameof(ReleaseSelf));
             EventCenterManager.Instance.TriggerEvent(
                 new SpeedDownArg
                 {

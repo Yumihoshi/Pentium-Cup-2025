@@ -14,9 +14,18 @@ namespace MVC.Models.FlyObj
         order = 1)]
     public class FlyObjConfig : ScriptableObject
     {
-        [SerializeField] private float minSpawnInterval;
-        [SerializeField] private float maxSpawnInterval;
-        public float MinSpawnInterval => minSpawnInterval;
-        public float MaxSpawnInterval => maxSpawnInterval;
+        [Header("陨石生成间隔")] [SerializeField]
+        private float minStoneSpawnInterval = 3f;
+
+        [SerializeField] private float maxStoneSpawnInterval = 5f;
+
+        [Header("风生成间隔")] [SerializeField]
+        private float minWindSpawnInterval = 5f;
+
+        [SerializeField] private float maxWindSpawnInterval = 8f;
+        public float MinStoneSpawnInterval => minStoneSpawnInterval;
+        public float MaxStoneSpawnInterval => maxStoneSpawnInterval;
+        public float MinWindSpawnInterval => minWindSpawnInterval;
+        public float MaxWindSpawnInterval => maxWindSpawnInterval;
     }
 }

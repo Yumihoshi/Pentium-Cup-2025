@@ -31,6 +31,7 @@ namespace Entities.FallingStone
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (!other.CompareTag("Player")) return;
+            CancelInvoke(nameof(ReleaseSelf));
             other.GetComponent<PlayerController>().Model.TakeDamage(damage);
             ReleaseSelf();
         }

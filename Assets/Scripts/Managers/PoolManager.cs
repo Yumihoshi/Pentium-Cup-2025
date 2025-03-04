@@ -134,17 +134,17 @@ namespace Managers
             windScript.SetPool(WindPool);
             return windScript;
         }
-        
+
         private void GetWind(Wind wind)
         {
             wind.gameObject.SetActive(true);
         }
-        
+
         private void ReleaseWind(Wind wind)
         {
             wind.gameObject.SetActive(false);
         }
-        
+
         private void DestroyWind(Wind wind)
         {
             Destroy(wind.gameObject);

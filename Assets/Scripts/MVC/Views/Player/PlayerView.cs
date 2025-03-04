@@ -44,17 +44,14 @@ namespace MVC.Views.Player
             // 旋转
             float targetRotation;
             if (!_rotateReverse)
-            {
                 targetRotation = Mathf.Clamp(_rb.rotation -
-                                                _model.InputDirection.x *
-                                                ModelsManager.Instance.PlayerData
-                                                    .RotateSpeed *
-                                                Time.fixedDeltaTime,
-                ModelsManager.Instance.PlayerData.MinRotateAngle,
-                ModelsManager.Instance.PlayerData.MaxRotateAngle);
-            }
+                                             _model.InputDirection.x *
+                                             ModelsManager.Instance.PlayerData
+                                                 .RotateSpeed *
+                                             Time.fixedDeltaTime,
+                    ModelsManager.Instance.PlayerData.MinRotateAngle,
+                    ModelsManager.Instance.PlayerData.MaxRotateAngle);
             else
-            {
                 targetRotation = Mathf.Clamp(_rb.rotation +
                                              _model.InputDirection.x *
                                              ModelsManager.Instance.PlayerData
@@ -62,7 +59,6 @@ namespace MVC.Views.Player
                                              Time.fixedDeltaTime,
                     ModelsManager.Instance.PlayerData.MinRotateAngle,
                     ModelsManager.Instance.PlayerData.MaxRotateAngle);
-            }
             _rb.MoveRotation(targetRotation);
         }
 

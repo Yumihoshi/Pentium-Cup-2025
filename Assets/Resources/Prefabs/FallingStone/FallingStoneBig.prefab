@@ -168,4 +168,4 @@ MonoBehaviour:
   type: 1
   damage: 20
   speed: 5
-  lifeTime: 5
+  lifeTime: 10

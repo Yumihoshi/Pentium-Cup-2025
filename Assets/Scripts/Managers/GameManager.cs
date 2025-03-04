@@ -35,7 +35,9 @@ namespace Managers
         private void Start()
         {
             OnSpawnFallingStone += isSpawn =>
-                StartCoroutine(SpawnHandler(isSpawn));
+                StartCoroutine(SpawnStoneHandler(isSpawn));
+            OnSpawnFallingStone += isSpawn =>
+                StartCoroutine(SpawnWindHandler(isSpawn));
             Invoke(nameof(Init), 2f);
         }
 
@@ -46,7 +48,7 @@ namespace Managers
             SpawnState = true;
         }
 
-        private IEnumerator SpawnHandler(bool isSpawn)
+        private IEnumerator SpawnStoneHandler(bool isSpawn)
         {
             while (isSpawn)
             {
@@ -56,14 +58,26 @@ namespace Managers
                     PoolManager.Instance.FallingStonePool.Get();
                 stone.Init(spawnPos, Quaternion.identity);
                 stone.Launch();
+                yield return new WaitForSeconds(Random.Range(
+                    ModelsManager.Instance.FlyObjData.MinStoneSpawnInterval,
+                    ModelsManager.Instance.FlyObjData.MaxStoneSpawnInterval));
+            }
+
+            yield return null;
+        }
+
+        private IEnumerator SpawnWindHandler(bool isSpawn)
+        {
+            while (isSpawn)
+            {
                 // 生成风
                 Vector3 windPos = CommonH.GetRandomScreenTopPos();
                 Wind wind = PoolManager.Instance.WindPool.Get();
                 wind.Init(windPos, Quaternion.identity);
                 wind.Launch();
                 yield return new WaitForSeconds(Random.Range(
-                    ModelsManager.Instance.FlyObjData.MinSpawnInterval,
-                    ModelsManager.Instance.FlyObjData.MaxSpawnInterval));
+                    ModelsManager.Instance.FlyObjData.MinWindSpawnInterval,
+                    ModelsManager.Instance.FlyObjData.MaxWindSpawnInterval));
             }
 
             yield return null;
