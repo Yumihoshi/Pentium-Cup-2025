@@ -6,16 +6,46 @@
 // @description:
 // *****************************************************************************
 
+using System;
 using UnityEngine;
+using UnityEngine.Pool;
 
 namespace Entities.VFX
 {
     public class ExplosionVFX : MonoBehaviour
     {
-        private void Start()
+        private ObjectPool<ExplosionVFX> _pool;
+        private ParticleSystem _particleSystem;
+
+        private void Awake()
         {
-            // TODO: 对象池管理特效
-            Destroy(gameObject, 1.5f);
+            _particleSystem = GetComponent<ParticleSystem>();
+            _particleSystem.Stop();
+        }
+
+        private void OnEnable()
+        {
+            _particleSystem.Stop();
+        }
+
+        /// <summary>
+        /// 设置对象池
+        /// </summary>
+        /// <param name="pool"></param>
+        public void SetPool(ObjectPool<ExplosionVFX> pool)
+        {
+            _pool = pool;
+        }
+
+        public void PlayVFX()
+        {
+            _particleSystem.Play();
+            Invoke(nameof(ReleaseSelf), 1.5f);
+        }
+
+        private void ReleaseSelf()
+        {
+            _pool.Release(this);
         }
     }
 }

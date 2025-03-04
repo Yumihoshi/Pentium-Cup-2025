@@ -15,5 +15,8 @@ namespace Managers
     {
         [Header("爆炸特效")] [SerializeField] private GameObject explosionPrefab;
         public GameObject ExplosionPrefab => explosionPrefab;
+        
+        [Header("子弹")] [SerializeField] private GameObject bulletPrefab;
+        public GameObject BulletPrefab => bulletPrefab;
     }
 }

@@ -6,6 +6,7 @@
 // @description:
 // *****************************************************************************
 
+using Entities.VFX;
 using Managers;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -28,8 +29,12 @@ namespace Entities.Bullet
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (!other.CompareTag("Enemy")) return;
-            Instantiate(ResourcesManager.Instance.ExplosionPrefab,
-                transform.position, Quaternion.identity);
+            // 播放爆炸特效
+            ExplosionVFX explosion = VFXManager.Instance.ExplosionPool.Get();
+            explosion.transform.position = transform.position;
+            explosion.transform.rotation = Quaternion.identity;
+            explosion.PlayVFX();
+            // 销毁子弹
             Destroy(other.gameObject);
             _pool.Release(this);
         }

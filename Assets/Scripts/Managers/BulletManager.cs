@@ -15,19 +15,17 @@ namespace Managers
 {
     public class BulletManager : Singleton<BulletManager>
     {
-        private GameObject _bulletPrefab;
         public ObjectPool<Bullet> BulletPool { get; private set; }
 
         private void Start()
         {
             BulletPool = new ObjectPool<Bullet>(CreateBullet, GetBullet,
                 ReleaseBullet, DestroyBullet, true, 10, 100);
-            _bulletPrefab = Resources.Load<GameObject>("Prefabs/Bullet");
         }
 
         private Bullet CreateBullet()
         {
-            GameObject bullet = Instantiate(_bulletPrefab);
+            GameObject bullet = Instantiate(ResourcesManager.Instance.BulletPrefab);
             Bullet bulletScript = bullet.GetComponent<Bullet>();
             bulletScript.SetPool(BulletPool);
             return bulletScript;
