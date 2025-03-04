@@ -6,6 +6,7 @@
 // @description:
 // *****************************************************************************
 
+using System.Collections.Generic;
 using HoshiVerseFramework.Base;
 using UnityEngine;
 
@@ -14,9 +15,15 @@ namespace Managers
     public class ResourcesManager : Singleton<ResourcesManager>
     {
         [Header("爆炸特效")] [SerializeField] private GameObject explosionPrefab;
-        public GameObject ExplosionPrefab => explosionPrefab;
-        
+
         [Header("子弹")] [SerializeField] private GameObject bulletPrefab;
+
+        [Header("陨石")] [SerializeField]
+        private List<GameObject> fallingStonePrefabs;
+
+        public GameObject ExplosionPrefab => explosionPrefab;
         public GameObject BulletPrefab => bulletPrefab;
+
+        public List<GameObject> FallingStonePrefabs => fallingStonePrefabs;
     }
 }

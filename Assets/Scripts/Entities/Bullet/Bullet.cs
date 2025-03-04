@@ -30,7 +30,8 @@ namespace Entities.Bullet
         {
             if (!other.CompareTag("Enemy")) return;
             // 播放爆炸特效
-            ExplosionVFX explosion = VFXManager.Instance.ExplosionPool.Get();
+            ExplosionVFX explosion =
+                PoolManager.Instance.ExplosionVFXPool.Get();
             explosion.Init(transform.position, Quaternion.identity);
             explosion.PlayVFX();
             // 销毁子弹
@@ -38,8 +39,9 @@ namespace Entities.Bullet
             _pool.Release(this);
         }
 
-        private void AutoDestroy()
+        private void ReleaseSelf()
         {
+            if (!gameObject.activeSelf) return;
             _pool.Release(this);
         }
 
@@ -64,7 +66,7 @@ namespace Entities.Bullet
         /// </summary>
         public void Launch()
         {
-            Invoke(nameof(AutoDestroy), lifeTime);
+            Invoke(nameof(ReleaseSelf), lifeTime);
             if (!_rb) _rb = GetComponent<Rigidbody2D>();
             _rb.linearVelocity = transform.up * speed;
         }

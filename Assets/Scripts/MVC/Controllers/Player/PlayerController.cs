@@ -55,7 +55,7 @@ namespace MVC.Controllers.Player
         {
             if (_attackTimer > 0) return;
             // 发射子弹
-            Bullet bullet = BulletManager.Instance.BulletPool.Get();
+            Bullet bullet = PoolManager.Instance.BulletPool.Get();
             bullet.Init(_bulletSpawnPos.position, transform.rotation);
             bullet.Launch();
             _attackTimer = ModelsManager.Instance.PlayerData.AttackInterval;

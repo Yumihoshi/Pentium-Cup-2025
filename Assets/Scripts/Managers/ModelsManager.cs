@@ -7,6 +7,7 @@
 // *****************************************************************************
 
 using HoshiVerseFramework.Base;
+using MVC.Models.FlyObj;
 using MVC.Models.Player;
 using UnityEngine;
 
@@ -15,11 +16,14 @@ namespace Managers
     public class ModelsManager : Singleton<ModelsManager>
     {
         public PlayerConfig PlayerData { get; private set; }
+        public FlyObjConfig FlyObjData { get; private set; }
 
         protected override void Awake()
         {
             base.Awake();
             PlayerData = Resources.Load<PlayerConfig>("Configs/Player Config");
+            FlyObjData =
+                Resources.Load<FlyObjConfig>("Configs/Fly Object Config");
         }
     }
 }

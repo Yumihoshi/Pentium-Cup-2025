@@ -15,9 +15,9 @@ namespace MVC.Views.Player
 {
     public class PlayerView : MonoBehaviour
     {
+        [SerializeField] private ParticleSystem speedUpVFX;
         private PlayerModel _model;
         private Rigidbody2D _rb;
-        [SerializeField] private ParticleSystem speedUpVFX;
 
         private void Awake()
         {
@@ -54,25 +54,19 @@ namespace MVC.Views.Player
         private void SpeedUp()
         {
             if (!_model.IsSpeedUp)
-            {
                 _rb.linearVelocity = transform.up *
                                      ModelsManager.Instance.PlayerData
                                          .MoveSpeed;
-            }
             else
-            {
                 _rb.linearVelocity = transform.up *
                                      ModelsManager.Instance.PlayerData
                                          .SpeedUpSpeed;
-            }
         }
 
         private void PlaySpeedUpVFX(bool isSpeedUp)
         {
             if (isSpeedUp)
-            {
                 speedUpVFX.Play();
-            }
             else
                 speedUpVFX.Stop();
         }

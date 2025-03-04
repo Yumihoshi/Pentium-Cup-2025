@@ -6,7 +6,6 @@
 // @description:
 // *****************************************************************************
 
-using System;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -14,8 +13,8 @@ namespace Entities.VFX
 {
     public class ExplosionVFX : MonoBehaviour
     {
-        private ObjectPool<ExplosionVFX> _pool;
         private ParticleSystem _particleSystem;
+        private ObjectPool<ExplosionVFX> _pool;
 
         private void Awake()
         {
@@ -45,6 +44,7 @@ namespace Entities.VFX
 
         private void ReleaseSelf()
         {
+            if (!gameObject.activeSelf) return;
             _pool.Release(this);
         }
 

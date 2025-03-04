@@ -62,6 +62,7 @@ namespace MVC.Models.Player
         {
             _curHp = Mathf.Clamp(_curHp - damage, 0,
                 ModelsManager.Instance.PlayerData.MaxHp);
+            Debug.Log("玩家受到伤害，剩余血量" + _curHp);
         }
 
         /// <summary>
@@ -72,6 +73,7 @@ namespace MVC.Models.Player
         {
             _curHp = Mathf.Clamp(_curHp + heal, 0,
                 ModelsManager.Instance.PlayerData.MaxHp);
+            Debug.Log("玩家受到治疗，剩余血量" + _curHp);
         }
     }
 }
