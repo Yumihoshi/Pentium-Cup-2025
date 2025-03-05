@@ -24,15 +24,11 @@ namespace MVC.Controllers.Player
         private PlayerView _view;
         public PlayerModel Model { get; private set; }
 
-        private void Awake()
+        private void Start()
         {
             Model = new PlayerModel(ModelsManager.Instance.PlayerData.MaxHp);
             Model.Init();
             _view = GetComponent<PlayerView>();
-        }
-
-        private void Start()
-        {
             _bulletSpawnPos = GameObject.FindWithTag("Player").transform
                 .Find("FirePos");
             // 注册减速事件

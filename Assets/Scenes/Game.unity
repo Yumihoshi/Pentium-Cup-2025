@@ -1607,7 +1607,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u5F53\u524D\u91CC\u7A0B\uFF1A0km"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 60c692e8dece4ea4b97fa2f0d8ef0fcb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c1d2f1c0952c06b4d8a03b8e13c1eb22, type: 2}
   m_sharedMaterial: {fileID: 8290849372100078369, guid: 60c692e8dece4ea4b97fa2f0d8ef0fcb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1673,7 +1673,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &586102232
