@@ -87,7 +87,7 @@ namespace MVC.Controllers.Player
         {
             if (_attackTimer > 0) return;
             // 发射子弹
-            AudioManager.Instance.PlaySfx("武器发射");
+            AudioManager.Instance.PlayAttackSfx();
             Bullet bullet = PoolManager.Instance.BulletPool.Get();
             bullet.Init(_bulletSpawnPos.position, transform.rotation);
             bullet.Launch();
