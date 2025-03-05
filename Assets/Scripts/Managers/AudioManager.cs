@@ -16,6 +16,8 @@ namespace Managers
         [SerializeField] private AudioSource bgmSource;
         [SerializeField] private AudioSource sfxSource;
         [SerializeField] private AudioSource rotateSfxSource;
+        [SerializeField] private AudioSource attackSfxSource;
+        [SerializeField] private AudioSource hitSfxSource;
 
         /// <summary>
         /// 播放BGM背景音乐
@@ -69,7 +71,6 @@ namespace Managers
         /// <param name="status"></param>
         public void PlayRotateSfx(bool status)
         {
-            // TODO: 分离发射和命中音效
             if (status)
             {
                 if (rotateSfxSource.isPlaying) return;
@@ -79,6 +80,16 @@ namespace Managers
             {
                 rotateSfxSource.Stop();
             }
+        }
+
+        public void PlayAttackSfx()
+        {
+            attackSfxSource.Play();
+        }
+        
+        public void PlayHitSfx()
+        {
+            hitSfxSource.Play();
         }
     }
 }
