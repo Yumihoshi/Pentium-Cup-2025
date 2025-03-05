@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1335258695647379105}
   - component: {fileID: 4101985929993304961}
   - component: {fileID: 36105306337775976}
+  - component: {fileID: 718269044020013287}
   - component: {fileID: 4909290819416564565}
   m_Layer: 0
   m_Name: Wind
@@ -153,6 +154,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &718269044020013287
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7862961361255104106}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5fa220df4aa8dcb40b4b8bec980166f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &4909290819416564565
 MonoBehaviour:
   m_ObjectHideFlags: 0
