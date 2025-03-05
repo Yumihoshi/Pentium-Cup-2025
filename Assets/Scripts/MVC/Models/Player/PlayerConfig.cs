@@ -6,6 +6,7 @@
 // @description:
 // *****************************************************************************
 
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace MVC.Models.Player
@@ -29,6 +30,9 @@ namespace MVC.Models.Player
 
         [Header("血量")] [SerializeField] private int maxHp = 100;
 
+        [Header("每张地图所需里程数")] [SerializeField]
+        private List<int> milesPerMap = new();
+
         public float RotateSpeed => rotateSpeed;
         public float MoveSpeed => moveSpeed;
         public float MinRotateAngle => minRotateAngle;
@@ -36,5 +40,6 @@ namespace MVC.Models.Player
         public float SpeedUpSpeed => speedUpSpeed;
         public float AttackInterval => attackInterval;
         public int MaxHp => maxHp;
+        public List<int> MilesPerMap => milesPerMap;
     }
 }

@@ -19,7 +19,21 @@ namespace Managers
 {
     public class GameManager : Singleton<GameManager>
     {
+        [SerializeField] private int mileLimit = 200;
+        private int _curMile;
         private bool _spawnState;
+        private float _timer;
+
+        public int CurMile
+        {
+            get => _curMile;
+            set
+            {
+                if (value == _curMile) return;
+                _curMile = value;
+                OnMileChanged?.Invoke(value);
+            }
+        }
 
         public bool SpawnState
         {
@@ -41,7 +55,24 @@ namespace Managers
             Invoke(nameof(Init), 2f);
         }
 
+        private void Update()
+        {
+            if (_timer >= 0.1f)
+            {
+                _timer = 0f;
+                CurMile++;
+                if (CurMile >= mileLimit)
+                {
+                    CurMile = 0;
+                    BgManager.Instance.SetNextBg();
+                }
+            }
+
+            _timer += Time.deltaTime;
+        }
+
         private event Action<bool> OnSpawnFallingStone;
+        public event Action<int> OnMileChanged;
 
         private void Init()
         {

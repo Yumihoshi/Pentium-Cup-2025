@@ -86,7 +86,7 @@ namespace Managers
         {
             attackSfxSource.Play();
         }
-        
+
         public void PlayHitSfx()
         {
             hitSfxSource.Play();
