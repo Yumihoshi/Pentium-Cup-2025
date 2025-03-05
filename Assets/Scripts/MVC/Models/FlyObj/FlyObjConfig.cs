@@ -23,6 +23,13 @@ namespace MVC.Models.FlyObj
         private float minWindSpawnInterval = 5f;
 
         [SerializeField] private float maxWindSpawnInterval = 8f;
+
+        [Header("雷暴生成间隔")] [SerializeField]
+        private float minThunderSpawnInterval = 5f;
+
+        [SerializeField] private float maxThunderSpawnInterval = 8f;
+        public float MinThunderSpawnInterval => minThunderSpawnInterval;
+        public float MaxThunderSpawnInterval => maxThunderSpawnInterval;
         public float MinStoneSpawnInterval => minStoneSpawnInterval;
         public float MaxStoneSpawnInterval => maxStoneSpawnInterval;
         public float MinWindSpawnInterval => minWindSpawnInterval;

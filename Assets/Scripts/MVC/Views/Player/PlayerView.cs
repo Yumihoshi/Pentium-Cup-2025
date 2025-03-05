@@ -45,6 +45,7 @@ namespace MVC.Views.Player
                 AudioManager.Instance.PlayRotateSfx(false);
                 return;
             }
+
             // 旋转
             float targetRotation;
             if (!_rotateReverse)

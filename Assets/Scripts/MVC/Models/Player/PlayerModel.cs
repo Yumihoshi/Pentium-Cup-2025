@@ -24,6 +24,8 @@ namespace MVC.Models.Player
             _curHp = initHp;
         }
 
+        public bool IsEnterThunder { get; set; }
+
         public bool IsSpeedUp
         {
             get => _isSpeedUp;

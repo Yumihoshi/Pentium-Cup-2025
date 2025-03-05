@@ -6,10 +6,8 @@
 // @description:
 // *****************************************************************************
 
-using System;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Entities.Weather

@@ -9,6 +9,7 @@
 using Entities.Bullet;
 using Entities.FallingStone;
 using Entities.VFX;
+using Entities.Weather;
 using Entities.Wind;
 using HoshiVerseFramework.Base;
 using UnityEngine;
@@ -22,6 +23,7 @@ namespace Managers
         public ObjectPool<ExplosionVFX> ExplosionVFXPool { get; private set; }
         public ObjectPool<FallingStone> FallingStonePool { get; private set; }
         public ObjectPool<Wind> WindPool { get; private set; }
+        public ObjectPool<Thunder> ThunderPool { get; private set; }
 
         private void Start()
         {
@@ -35,6 +37,8 @@ namespace Managers
                 ReleaseFallingStone, DestroyFallingStone, true, 10, 100);
             WindPool = new ObjectPool<Wind>(CreateWind, GetWind, ReleaseWind,
                 DestroyWind, true, 10, 100);
+            ThunderPool = new ObjectPool<Thunder>(CreateThunder, GetThunder,
+                ReleaseThunder, DestroyThunder, true, 10, 100);
         }
 
         #region 子弹
@@ -148,6 +152,34 @@ namespace Managers
         private void DestroyWind(Wind wind)
         {
             Destroy(wind.gameObject);
+        }
+
+        #endregion
+
+        #region 雷暴
+
+        private Thunder CreateThunder()
+        {
+            GameObject thunder =
+                Instantiate(ResourcesManager.Instance.ThunderPrefab);
+            Thunder thunderScript = thunder.GetComponent<Thunder>();
+            thunderScript.SetPool(ThunderPool);
+            return thunderScript;
+        }
+
+        private void GetThunder(Thunder thunder)
+        {
+            thunder.gameObject.SetActive(true);
+        }
+
+        private void ReleaseThunder(Thunder thunder)
+        {
+            thunder.gameObject.SetActive(false);
+        }
+
+        private void DestroyThunder(Thunder thunder)
+        {
+            Destroy(thunder.gameObject);
         }
 
         #endregion

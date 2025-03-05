@@ -300,7 +300,7 @@ Shader "TextMeshPro/Distance Field"
                                           _OutlineUVSpeedY) * _Time.y);
 
                 faceColor = GetColor(sd, faceColor, outlineColor, outline,
-       softness);
+                                     softness);
 
                 #if BEVEL_ON
 			float3 dxy = float3(0.5 / _TextureWidth, 0.5 / _TextureHeight, 0);

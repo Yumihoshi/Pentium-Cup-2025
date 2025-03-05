@@ -6,6 +6,7 @@
 // @description:
 // *****************************************************************************
 
+using System.Collections;
 using Entities.Bullet;
 using HoshiVerseFramework.Base;
 using Managers;
@@ -37,6 +38,8 @@ namespace MVC.Controllers.Player
             // 注册减速事件
             EventCenterManager.Instance.AddListener<SpeedDownArg>(
                 _view.RotateReverse);
+            EventCenterManager.Instance.AddListener<EnterThunderAreaArg>(
+                OnEnterThunder);
             Model.OnSpeedUpEvent += speedUp =>
             {
                 if (!speedUp)
@@ -50,6 +53,21 @@ namespace MVC.Controllers.Player
         {
             if (_attackTimer <= 0) return;
             _attackTimer -= Time.deltaTime;
+        }
+
+        private void OnEnterThunder(EnterThunderAreaArg arg)
+        {
+            Model.IsEnterThunder = arg.Damage;
+            StartCoroutine(ThunderHandler(arg.DamageInterval));
+        }
+
+        private IEnumerator ThunderHandler(float interval)
+        {
+            while (Model.IsEnterThunder)
+            {
+                Model.TakeDamage(1);
+                yield return new WaitForSeconds(interval);
+            }
         }
 
         /// <summary>

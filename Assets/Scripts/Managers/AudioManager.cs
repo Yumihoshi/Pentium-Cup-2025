@@ -45,9 +45,10 @@ namespace Managers
         /// <param name="sfxName"></param>
         public void PlaySfx(string sfxName)
         {
-            sfxSource.PlayOneShot(Resources.Load<AudioClip>("Audio/SFX/" + sfxName));
+            sfxSource.PlayOneShot(
+                Resources.Load<AudioClip>("Audio/SFX/" + sfxName));
         }
-        
+
         /// <summary>
         /// 播放音效
         /// </summary>
@@ -68,12 +69,16 @@ namespace Managers
         /// <param name="status"></param>
         public void PlayRotateSfx(bool status)
         {
+            // TODO: 分离发射和命中音效
             if (status)
             {
                 if (rotateSfxSource.isPlaying) return;
                 rotateSfxSource.Play();
             }
-            else rotateSfxSource.Stop();
+            else
+            {
+                rotateSfxSource.Stop();
+            }
         }
     }
 }

@@ -22,11 +22,13 @@ namespace Managers
         private List<GameObject> fallingStonePrefabs;
 
         [Header("风")] [SerializeField] private GameObject windPrefab;
+        [Header("雷")] [SerializeField] private GameObject thunderPrefab;
 
         public GameObject ExplosionPrefab => explosionPrefab;
         public GameObject BulletPrefab => bulletPrefab;
 
         public List<GameObject> FallingStonePrefabs => fallingStonePrefabs;
         public GameObject WindPrefab => windPrefab;
+        public GameObject ThunderPrefab => thunderPrefab;
     }
 }

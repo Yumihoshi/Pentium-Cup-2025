@@ -301,6 +301,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateType: "\u96F7\u96E8\u5929"
   isDefaultState: 0
+  rain:
+  - {fileID: 852277126863309411}
+  - {fileID: 1953952574}
+  - {fileID: 1731515874}
 --- !u!114 &218153451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1211,6 +1215,7 @@ MonoBehaviour:
   - {fileID: 7274546895166160901, guid: c40e0e4faafc1fd439b35dbf5e4122b7, type: 3}
   - {fileID: 1513611123846578900, guid: 872b24e42da485d48b2a79683159287c, type: 3}
   windPrefab: {fileID: 7862961361255104106, guid: aec76e72acc49a948a67d67bac179ee3, type: 3}
+  thunderPrefab: {fileID: 923508793452798484, guid: da9eabaf251869942befe3be88f501bc, type: 3}
 --- !u!198 &1731515874 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8029528444761088622, guid: eeceb443ca5b12143a422a027f0982a9, type: 3}

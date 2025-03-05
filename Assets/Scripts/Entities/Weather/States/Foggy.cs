@@ -6,7 +6,6 @@
 // @description:
 // *****************************************************************************
 
-using System;
 using HoshiVerseFramework.Base.FSM;
 using UnityEngine;
 
@@ -34,6 +33,7 @@ namespace Entities.Weather.States
                 Debug.LogWarning("找不到雾效果");
                 return;
             }
+
             _fog.ShowFog(true);
         }
 
@@ -53,6 +53,7 @@ namespace Entities.Weather.States
                 Debug.LogWarning("找不到雾效果");
                 return;
             }
+
             _fog.ShowFog(false);
         }
     }

@@ -18,10 +18,7 @@ namespace Entities.Weather.States
 
         private void Start()
         {
-            foreach (ParticleSystem s in rain)
-            {
-                s.Stop();
-            }
+            foreach (ParticleSystem s in rain) s.Stop();
         }
 
         public override bool OnCheck(StateContext context = null)
@@ -32,10 +29,7 @@ namespace Entities.Weather.States
         public override void OnEnter(StateContext context = null)
         {
             Debug.Log("天气进入雨天");
-            foreach (ParticleSystem s in rain)
-            {
-                s.Play();
-            }
+            foreach (ParticleSystem s in rain) s.Play();
         }
 
         public override void OnUpdate()
@@ -49,10 +43,7 @@ namespace Entities.Weather.States
         public override void OnExit(StateContext context = null)
         {
             Debug.Log("天气退出雨天");
-            foreach (ParticleSystem s in rain)
-            {
-                s.Stop();
-            }
+            foreach (ParticleSystem s in rain) s.Stop();
         }
     }
 }
