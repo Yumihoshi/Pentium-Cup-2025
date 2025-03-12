@@ -12,15 +12,20 @@ using Commons;
 using Entities.FallingStone;
 using Entities.Wind;
 using HoshiVerseFramework.Base;
+using MVC.Controllers.Player;
+using UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 namespace Managers
 {
     public class GameManager : Singleton<GameManager>
     {
-        [SerializeField] private int mileLimit = 200;
+        [SerializeField] private int mileLimit = 96100;
         private int _curMile;
+        private ImgFade _imgFade;
+        private int _level;
         private bool _spawnState;
         private float _timer;
 
@@ -57,18 +62,21 @@ namespace Managers
 
         private void Update()
         {
-            if (_timer >= 0.1f)
+            if (_timer >= 0.0003f)
             {
                 _timer = 0f;
-                CurMile++;
-                if (CurMile >= mileLimit)
+                CurMile += 15;
+                if (CurMile / mileLimit != _level)
                 {
-                    CurMile = 0;
+                    _level = CurMile / mileLimit;
                     BgManager.Instance.SetNextBg();
                 }
             }
 
             _timer += Time.deltaTime;
+            // 全屏切换
+            if (Input.GetKeyDown(KeyCode.F11))
+                Screen.fullScreen = !Screen.fullScreen;
         }
 
         private event Action<bool> OnSpawnFallingStone;
@@ -77,6 +85,11 @@ namespace Managers
         private void Init()
         {
             SpawnState = true;
+            _imgFade = GameObject.FindWithTag("ImgFade")
+                ?.GetComponent<ImgFade>();
+            GameObject.FindWithTag("Player").GetComponent<PlayerController>()
+                    .Model.OnDieEvent +=
+                () => { LoadScene(0); };
         }
 
         private IEnumerator SpawnStoneHandler(bool isSpawn)
@@ -112,6 +125,20 @@ namespace Managers
             }
 
             yield return null;
+        }
+
+        public void LoadScene(int index)
+        {
+            _imgFade = GameObject.FindWithTag("ImgFade")
+                .GetComponent<ImgFade>();
+            StartCoroutine(HandleLoadScene(index));
+        }
+
+        private IEnumerator HandleLoadScene(int index)
+        {
+            _imgFade.PlayFadeIn();
+            yield return new WaitForSeconds(1.5f);
+            SceneManager.LoadScene(index);
         }
     }
 }

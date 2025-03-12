@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84191c663614e8cb91aac8c56eeec95, type: 3}
   m_Name: Fly Object Config
   m_EditorClassIdentifier: 
-  minStoneSpawnInterval: 3
-  maxStoneSpawnInterval: 5
-  minWindSpawnInterval: 5
-  maxWindSpawnInterval: 8
+  minStoneSpawnInterval: 0.5
+  maxStoneSpawnInterval: 1
+  minWindSpawnInterval: 1
+  maxWindSpawnInterval: 2
+  minThunderSpawnInterval: 3
+  maxThunderSpawnInterval: 5

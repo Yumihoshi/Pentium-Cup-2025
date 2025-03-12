@@ -28,6 +28,7 @@ namespace Commons
 
             Vector3 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
             worldPos.z = 0f;
+            worldPos.y += 10f;
             return worldPos;
         }
 

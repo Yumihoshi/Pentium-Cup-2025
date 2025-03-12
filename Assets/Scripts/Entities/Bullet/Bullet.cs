@@ -15,7 +15,7 @@ namespace Entities.Bullet
 {
     public class Bullet : MonoBehaviour
     {
-        [SerializeField] private float lifeTime = 5f;
+        [SerializeField] private float lifeTime = 3f;
         [SerializeField] private float speed = 10f;
 
         private ObjectPool<Bullet> _pool;
@@ -37,8 +37,8 @@ namespace Entities.Bullet
             // 播放爆炸音效
             AudioManager.Instance.PlayHitSfx();
             // 销毁子弹
-            Destroy(other.gameObject);
-            _pool.Release(this);
+            other.GetComponent<FallingStone.FallingStone>().ReleaseSelf();
+            ReleaseSelf();
         }
 
         private void ReleaseSelf()
@@ -68,6 +68,7 @@ namespace Entities.Bullet
         /// </summary>
         public void Launch()
         {
+            CancelInvoke(nameof(ReleaseSelf));
             Invoke(nameof(ReleaseSelf), lifeTime);
             if (!_rb) _rb = GetComponent<Rigidbody2D>();
             _rb.linearVelocity = transform.up * speed;

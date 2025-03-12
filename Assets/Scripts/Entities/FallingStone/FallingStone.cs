@@ -43,6 +43,7 @@ namespace Entities.FallingStone
 
         public void Launch()
         {
+            CancelInvoke(nameof(ReleaseSelf));
             _rb = GetComponent<Rigidbody2D>();
             Invoke(nameof(ReleaseSelf), lifeTime);
             _direction = GameObject.FindWithTag("Player").transform.position -
@@ -51,8 +52,9 @@ namespace Entities.FallingStone
             _rb.linearVelocity = _direction * speed;
         }
 
-        private void ReleaseSelf()
+        public void ReleaseSelf()
         {
+            CancelInvoke(nameof(ReleaseSelf));
             if (!gameObject.activeSelf) return;
             _pool.Release(this);
         }

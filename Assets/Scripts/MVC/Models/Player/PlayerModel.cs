@@ -50,6 +50,8 @@ namespace MVC.Models.Player
 
         public event Action<bool> OnSpeedUpEvent;
         public event Action<Vector2> OnMoveEvent;
+        public event Action<int> OnHpChangeEvent;
+        public event Action OnDieEvent;
 
         public void Init()
         {
@@ -64,6 +66,8 @@ namespace MVC.Models.Player
         {
             _curHp = Mathf.Clamp(_curHp - damage, 0,
                 ModelsManager.Instance.PlayerData.MaxHp);
+            OnHpChangeEvent?.Invoke(_curHp);
+            if (_curHp <= 0) OnDieEvent?.Invoke();
             Debug.Log("玩家受到伤害，剩余血量" + _curHp);
         }
 
@@ -75,6 +79,7 @@ namespace MVC.Models.Player
         {
             _curHp = Mathf.Clamp(_curHp + heal, 0,
                 ModelsManager.Instance.PlayerData.MaxHp);
+            OnHpChangeEvent?.Invoke(_curHp);
             Debug.Log("玩家受到治疗，剩余血量" + _curHp);
         }
     }
