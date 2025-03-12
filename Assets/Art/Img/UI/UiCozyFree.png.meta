@@ -1,0 +1,2486 @@
+fileFormatVersion: 2
+guid: 440e053692a0bc649851ad3b3715f503
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 14
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UiCozyFree_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 224
+        width: 90
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df66021a38222214ab2b015e75e81751
+      internalID: 183408351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_1
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 224
+        width: 90
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9ff19da19b53694bbe6cbe83fb69c4d
+      internalID: -630101154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_2
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 163
+        width: 54
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13d03f04aad7f1a4e98729ceb3059e0e
+      internalID: -2087973814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 209
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1cf12543e83fc44788b7222f4d0e3d6
+      internalID: 1494543419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_4
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 209
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f2cbbefd757da841bedf9efab7ebbd6
+      internalID: 598522718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_5
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 209
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d73d8a80151aac46ab2c06826bc0cc5
+      internalID: 1469407474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_6
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 209
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9d7deabf6aae0a40aaaea9517a7d600
+      internalID: -290117107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_7
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 209
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16012ae01f45dd24d83473ef44ce1181
+      internalID: 1728021033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_8
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 209
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a7009a35633f441a2d9112724a44a6
+      internalID: 810349801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_9
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 209
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfc3de9f74998814195a071b87daa73f
+      internalID: -1192705837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_10
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 209
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56f7fcd115f42e545abd81a76e1c1018
+      internalID: -1991947273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_11
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 185
+        width: 36
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f24471858668cb4bb54fb69ef1d5354
+      internalID: -1337168220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 193
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d811f91bd2fc4b44833b58c6f448081
+      internalID: 423350956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_13
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 193
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f58908628857c6e4d8ad0b3d17c67e66
+      internalID: 670994075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_14
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 193
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 345212a31523c624185301f384672553
+      internalID: -806143109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_15
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 193
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c81f06c94feab5c47b71be1ea0009110
+      internalID: -1833317127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_16
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 193
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37229e478e483643a5ac5d2e9b4e22d
+      internalID: 946687743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_17
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 193
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d5ced54a43041744affb50b9fb3ec42
+      internalID: -450893991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_18
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 193
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e212529720c09c94ead31bc693b79c14
+      internalID: -1818812709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_19
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 193
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 320ec6dbd6d2cc8419d36e431b554b8d
+      internalID: 843692838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_20
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 177
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aef6b20476c91664a9ff299d72cf6d27
+      internalID: -118559816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_21
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 177
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b3ec71da2cc2c4cb412496555c74fa
+      internalID: -878592604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_22
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 177
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13eb56b421fab0f49b58bd06b6b25718
+      internalID: 1505520185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_23
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 177
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c329272cce077674abcafa73fbee2fc7
+      internalID: -196298067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_24
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 177
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84d7d6f52a4bae740bf3b55c9ab974df
+      internalID: 443447843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_25
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 177
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9fe6969e0302704993e5ee3d6a0c92b
+      internalID: 72140906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_26
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 177
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e40fd752a7f48b64599f3afe75a07041
+      internalID: 715675426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_27
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 177
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f41afc920c4342c4b8b24fac00506830
+      internalID: 1297915260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_28
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 161
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df7600be7d62f2f44b5e16fb26d75a2b
+      internalID: -917242632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_29
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 161
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67607ee80b1fc0b46aacfdc68f9bc276
+      internalID: 1337981672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_30
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 161
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89284fc95f1a1314d98f2f907b3a5f26
+      internalID: -1475759405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_31
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 161
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6562f70670440b54f9fcf9cd971568a0
+      internalID: -1348791893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_32
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 161
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d823ab40c2e92e458ec74ff6e5accc9
+      internalID: -1660245090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_33
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 161
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd269ccda9e9c224ba008c9ac5ea9255
+      internalID: -1617614502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_34
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 161
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce853890f76c8c44fbdcc1ba87c03d4c
+      internalID: -943541568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_35
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 161
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc9e652a0bc79348b60a760dff748e9
+      internalID: -290254616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_36
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 145
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c5be0dcaa5dfba4890cc1e564855c9f
+      internalID: 53663566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_37
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 145
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c5e1497650ebb49b0e7400f867843a
+      internalID: 920148881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_38
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 145
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e97eac7eee731344bdb9ceba2e2dabe
+      internalID: -388744732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_39
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 145
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65ac4fd31ccbabc48897b76efc9d1322
+      internalID: 1060658192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_40
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 145
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ec3fa47dd7a1aa4a8feeb05b49cf7a8
+      internalID: 484638879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_41
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 145
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc0b7321cb1c1b14380c725b64850d58
+      internalID: 713321858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_42
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 145
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d3f12759e49bce4ba5bb17e27268eef
+      internalID: 1338527940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_43
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 145
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 896ef411f905fc44b83213294af63eac
+      internalID: 26046868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_44
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 147
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42e67a991f12ef14caa2a425fa52439e
+      internalID: -1191676602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_45
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 147
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6432c2683d4ee7c4ba25dccaaed726c2
+      internalID: -835450240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_46
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 146
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3e3c9f63b209b48911331f0f21a27f
+      internalID: 512580639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_47
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 146
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c568141273ab64089fdb9e592d4d76
+      internalID: 725086558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_48
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 147
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c37118c47ecbfe441b75b342e07d4228
+      internalID: -1796070328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_49
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 147
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ca21c92e964044790ce2c0a12ea6af
+      internalID: 1069566594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_50
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 146
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f0c280d9fc57e4580b5b6f7eae663a
+      internalID: -1179870381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_51
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 146
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5302fe85c18942e4abc8656ba0c68180
+      internalID: 667225437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_52
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 129
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e6c791ba9399846bda7b01705e4ff1
+      internalID: 1601347155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_53
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 129
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b3a67e25d03dda4d9d55dc413cba2fa
+      internalID: 486366122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_54
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 129
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04b43d5c00dfcbc47b89660f9afd6919
+      internalID: -516080990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_55
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 129
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36478c99338959b4d8fa4468007aeb15
+      internalID: 974820885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_56
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 129
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7652a58acd2621d4eb5c220cd710246f
+      internalID: 991474364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_57
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 129
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b59188712bda9840a3050127489a88b
+      internalID: 1265365638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_58
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 129
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f315b61ffccf82c46a45389371b2f417
+      internalID: -1659991051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_59
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 129
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fe0c9bb566af4c47add0c6bdd755dbf
+      internalID: -323765079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_60
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 131
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f90a1efd8d34dbe478a1d8e6b3f3485e
+      internalID: 628012563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_61
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 131
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 641ddcb63523dfd4da4c9b221dd96029
+      internalID: 1248092629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_62
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 132
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02935fd198b5a5245ac53adc44101a5b
+      internalID: -1015861452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_63
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 132
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4753487d1ac2974ebdd7b3d1afd3d1f
+      internalID: -1838317063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_64
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 131
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40c569303cce70848b979daa415f21ae
+      internalID: 665834627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_65
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 131
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3622cbc6fce5f5a4391e1cdb63123fcb
+      internalID: 799547721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_66
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 132
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc61176a964805948892e1b073c70979
+      internalID: -1787829095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_67
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 132
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe8a33ae29a18a14d95dae0be8e350f2
+      internalID: -1781414802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_68
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 113
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1234a677583526448fad0466fe46ab4
+      internalID: -1157982217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_69
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 113
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ec7fb09425fb94f91d4b184a00f167
+      internalID: 1073552182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_70
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 113
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a620102ffa6a6ec4592ce0780be4c7b9
+      internalID: 1212335612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_71
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 113
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3109a67e353faf645a826cf84af23c26
+      internalID: 40398745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_72
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 113
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5e365a14186f9f469ee8922351de254
+      internalID: -1629476053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_73
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 113
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e6538b4012744f4d83ec7c05a3a553c
+      internalID: 2057785916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_74
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 113
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b531cfd571ae20340be78951a2289e54
+      internalID: -539658030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_75
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 113
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b90f714a047e2d546ac5aa9dd18c6bd9
+      internalID: 521767852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_76
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 115
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 765112611ecaa594788c0ef827b99266
+      internalID: 2104477923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_77
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 115
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b654729caa05234cb8f67e5dd1f276f
+      internalID: -1081200378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_78
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 114
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec7f3598fac459d49bc3f1a96720a562
+      internalID: -1086286470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_79
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 114
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b4f6870a6c2cf845bb01747ccd272ce
+      internalID: 296286538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_80
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 115
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7ce3f8ca49b16648932e7fbef3b01c1
+      internalID: -259999618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_81
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 115
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 766c7ea909aa968408bc9d4b5f9890cf
+      internalID: -973689066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_82
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 114
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 092b4069ab7036d4480c70c5dce2c3bc
+      internalID: -2140278557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_83
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 114
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 534c22879dccfbc428c98b2553c4c64b
+      internalID: -1256181769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_84
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 97
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72be40c29f8e73944b268b239dfd8b5d
+      internalID: -598987121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_85
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 97
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e625c23af49e5d4380176bf3e708a56
+      internalID: 932482691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_86
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 97
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bad5c99bdb9e654ab73f2beb619c0b7
+      internalID: 498229754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_87
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 97
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ca1fdda02a3714eb02084afad8b446
+      internalID: 359385948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_88
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 97
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9072fdb54cdcd74ca518ca8b77234d1
+      internalID: 239853147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_89
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 97
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b313478b5f76aea4d805c31750e70bea
+      internalID: -481747770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_90
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 97
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bcdffde72bb8a649b925b3c31688778
+      internalID: -1950443425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_91
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 97
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f09f2185c70e8924ea4f80d1b6790130
+      internalID: 1361594002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_92
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 99
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2c7de2f577a1744ebb34b2685602ec5
+      internalID: 447244669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_93
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 99
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1020ebc8a152045b83909ea4642eb3
+      internalID: 107694481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_94
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 100
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab5036c69369e1e41a0169b7ce882e12
+      internalID: -453403398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_95
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 100
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d463dfa05d599e47b9fc43cd028242a
+      internalID: -302284852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_96
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 99
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7547f37cf664bd442a1ea86889bcc6f9
+      internalID: 1541717126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_97
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 99
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bebee66bbef8a514eba2cb454ae1cf86
+      internalID: -1325261018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_98
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 100
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80b43a7b341ee754fbd81c9cf006dc0a
+      internalID: 661986783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_99
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 100
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8019718e22335ee418a7e3a9d81e8838
+      internalID: -1008685974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_100
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 8
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a1d2087267ebfc4fbcc4726eb104a8c
+      internalID: -635339227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_101
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 8
+        width: 57
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7644a61651761164bb0acd964523ea66
+      internalID: -1487571875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_102
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 9
+        width: 47
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2084706fa7ec26c418bb9b25c9272f7b
+      internalID: 45793009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 91ec4ed86e91b824b8c287371de17b7f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      UiCozyFree_0: 183408351
+      UiCozyFree_1: -630101154
+      UiCozyFree_10: -1991947273
+      UiCozyFree_100: -635339227
+      UiCozyFree_101: -1487571875
+      UiCozyFree_102: 45793009
+      UiCozyFree_11: -1337168220
+      UiCozyFree_12: 423350956
+      UiCozyFree_13: 670994075
+      UiCozyFree_14: -806143109
+      UiCozyFree_15: -1833317127
+      UiCozyFree_16: 946687743
+      UiCozyFree_17: -450893991
+      UiCozyFree_18: -1818812709
+      UiCozyFree_19: 843692838
+      UiCozyFree_2: -2087973814
+      UiCozyFree_20: -118559816
+      UiCozyFree_21: -878592604
+      UiCozyFree_22: 1505520185
+      UiCozyFree_23: -196298067
+      UiCozyFree_24: 443447843
+      UiCozyFree_25: 72140906
+      UiCozyFree_26: 715675426
+      UiCozyFree_27: 1297915260
+      UiCozyFree_28: -917242632
+      UiCozyFree_29: 1337981672
+      UiCozyFree_3: 1494543419
+      UiCozyFree_30: -1475759405
+      UiCozyFree_31: -1348791893
+      UiCozyFree_32: -1660245090
+      UiCozyFree_33: -1617614502
+      UiCozyFree_34: -943541568
+      UiCozyFree_35: -290254616
+      UiCozyFree_36: 53663566
+      UiCozyFree_37: 920148881
+      UiCozyFree_38: -388744732
+      UiCozyFree_39: 1060658192
+      UiCozyFree_4: 598522718
+      UiCozyFree_40: 484638879
+      UiCozyFree_41: 713321858
+      UiCozyFree_42: 1338527940
+      UiCozyFree_43: 26046868
+      UiCozyFree_44: -1191676602
+      UiCozyFree_45: -835450240
+      UiCozyFree_46: 512580639
+      UiCozyFree_47: 725086558
+      UiCozyFree_48: -1796070328
+      UiCozyFree_49: 1069566594
+      UiCozyFree_5: 1469407474
+      UiCozyFree_50: -1179870381
+      UiCozyFree_51: 667225437
+      UiCozyFree_52: 1601347155
+      UiCozyFree_53: 486366122
+      UiCozyFree_54: -516080990
+      UiCozyFree_55: 974820885
+      UiCozyFree_56: 991474364
+      UiCozyFree_57: 1265365638
+      UiCozyFree_58: -1659991051
+      UiCozyFree_59: -323765079
+      UiCozyFree_6: -290117107
+      UiCozyFree_60: 628012563
+      UiCozyFree_61: 1248092629
+      UiCozyFree_62: -1015861452
+      UiCozyFree_63: -1838317063
+      UiCozyFree_64: 665834627
+      UiCozyFree_65: 799547721
+      UiCozyFree_66: -1787829095
+      UiCozyFree_67: -1781414802
+      UiCozyFree_68: -1157982217
+      UiCozyFree_69: 1073552182
+      UiCozyFree_7: 1728021033
+      UiCozyFree_70: 1212335612
+      UiCozyFree_71: 40398745
+      UiCozyFree_72: -1629476053
+      UiCozyFree_73: 2057785916
+      UiCozyFree_74: -539658030
+      UiCozyFree_75: 521767852
+      UiCozyFree_76: 2104477923
+      UiCozyFree_77: -1081200378
+      UiCozyFree_78: -1086286470
+      UiCozyFree_79: 296286538
+      UiCozyFree_8: 810349801
+      UiCozyFree_80: -259999618
+      UiCozyFree_81: -973689066
+      UiCozyFree_82: -2140278557
+      UiCozyFree_83: -1256181769
+      UiCozyFree_84: -598987121
+      UiCozyFree_85: 932482691
+      UiCozyFree_86: 498229754
+      UiCozyFree_87: 359385948
+      UiCozyFree_88: 239853147
+      UiCozyFree_89: -481747770
+      UiCozyFree_9: -1192705837
+      UiCozyFree_90: -1950443425
+      UiCozyFree_91: 1361594002
+      UiCozyFree_92: 447244669
+      UiCozyFree_93: 107694481
+      UiCozyFree_94: -453403398
+      UiCozyFree_95: -302284852
+      UiCozyFree_96: 1541717126
+      UiCozyFree_97: -1325261018
+      UiCozyFree_98: 661986783
+      UiCozyFree_99: -1008685974
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

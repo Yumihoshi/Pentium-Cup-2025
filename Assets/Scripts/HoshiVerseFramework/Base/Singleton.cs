@@ -13,20 +13,27 @@ namespace HoshiVerseFramework.Base
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         private static T _instance;
+        private static readonly object Lock = new();
 
         public static T Instance
         {
             get
             {
                 if (_instance != null) return _instance;
-                _instance = FindFirstObjectByType<T>();
+                lock (Lock)
+                {
+                    _instance = FindFirstObjectByType<T>();
 
-                if (_instance != null) return _instance;
-                GameObject singletonObject = new();
-                _instance = singletonObject.AddComponent<T>();
-                singletonObject.name = typeof(T) + " (Singleton)";
+                    if (_instance != null) return _instance;
+                    // 避免退出播放模式时，实例重建
+                    if (!Application.isPlaying) return null;
+                    // 创建一个新的实例
+                    GameObject singletonObject = new();
+                    _instance = singletonObject.AddComponent<T>();
+                    singletonObject.name = typeof(T) + " (Singleton)";
 
-                return _instance;
+                    return _instance;
+                }
             }
         }
 

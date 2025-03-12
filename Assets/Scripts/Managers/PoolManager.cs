@@ -28,17 +28,17 @@ namespace Managers
         private void Start()
         {
             BulletPool = new ObjectPool<Bullet>(CreateBullet, GetBullet,
-                ReleaseBullet, DestroyBullet, true, 10, 100);
+                ReleaseBullet, DestroyBullet, true, 10, 50);
             ExplosionVFXPool = new ObjectPool<ExplosionVFX>(CreateExplosion,
                 GetExplosion,
-                ReleaseExplosion, DestroyExplosion, true, 10, 100);
+                ReleaseExplosion, DestroyExplosion, true, 10, 50);
             FallingStonePool = new ObjectPool<FallingStone>(CreateFallingStone,
                 GetFallingStone,
-                ReleaseFallingStone, DestroyFallingStone, true, 10, 100);
+                ReleaseFallingStone, DestroyFallingStone, true, 10, 50);
             WindPool = new ObjectPool<Wind>(CreateWind, GetWind, ReleaseWind,
-                DestroyWind, true, 10, 100);
+                DestroyWind, true, 10, 50);
             ThunderPool = new ObjectPool<Thunder>(CreateThunder, GetThunder,
-                ReleaseThunder, DestroyThunder, true, 10, 100);
+                ReleaseThunder, DestroyThunder, true, 10, 50);
         }
 
         #region 子弹

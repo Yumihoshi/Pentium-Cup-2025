@@ -19,4 +19,4 @@ MonoBehaviour:
   speedUpSpeed: 6
   attackInterval: 0.3
   maxHp: 100
-  milesPerMap: c8000000c8000000c8000000c8000000
+  milesPerMap: 64770100647701006477010064770100
